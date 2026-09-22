@@ -1,0 +1,36 @@
+export const site = {
+  name: 'META DENTAL',
+  tagline: 'Advanced Dental Care',
+  url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://metadental.in').replace(/\/$/, ''),
+  phone: '+91 90944 65709',
+  phoneHref: 'tel:+919094465709',
+  secondaryPhone: '+91 90255 06758',
+  email: 'metadentalecr@gmail.com',
+  address: '1/130, East Coast Road, Panaiyur, Chennai, Tamil Nadu 600119',
+  postalAddress: {
+    streetAddress: '1/130, East Coast Road, Panaiyur',
+    addressLocality: 'Chennai',
+    addressRegion: 'Tamil Nadu',
+    postalCode: '600119',
+    addressCountry: 'IN',
+  },
+  openingHours: {
+    days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    opens: '09:00',
+    closes: '21:00',
+  },
+  hours: 'Monday–Saturday, 9:00 AM–9:00 PM',
+  sunday: 'Sunday by appointment',
+  booking: process.env.NEXT_PUBLIC_MYSLOTHUB_URL || 'https://www.myslothub.com/metadental',
+  whatsapp:
+    'https://wa.me/919094465709?text=Hello%20META%20DENTAL%2C%20I%20would%20like%20to%20request%20an%20appointment.',
+  maps: 'https://www.google.com/maps?cid=13745415562818724992',
+  instagram: 'https://www.instagram.com/metadentalecr/',
+  reviews: {
+    rating: null as number | null,
+    count: null as number | null,
+    verifiedAt: null as string | null,
+  },
+};
+export const allowIndexing = process.env.ENABLE_INDEXING === 'true';
+export const absolute = (pathname: string) => new URL(pathname, site.url).toString();
