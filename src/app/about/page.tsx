@@ -1,9 +1,8 @@
 import { interfaceCopy } from '@/config/copy';
 const copy = interfaceCopy.app_about_page;
-import Image from 'next/image';
-import { brand } from '@/config/brand';
 import { PageIntro, Breadcrumbs, CTA } from '@/components/ui';
 import { DoctorCards } from '@/components/content-cards';
+import { ClinicGallery } from '@/components/clinic-gallery';
 import { seo } from '@/lib/seo';
 export const metadata = seo(
   copy['about_our_dental_clinic_in_panaiyur'],
@@ -34,16 +33,7 @@ export default function Page() {
               <p>{copy['whether_you_are_visiting_for_a']}</p>
             </div>
           </div>
-          <div className="gallery-grid">
-            {[brand.images.reception, brand.images.treatment, brand.images.exterior].map((img) => (
-              <figure key={img.src}>
-                <div>
-                  <Image src={img.src} alt={img.alt} fill sizes="(max-width:700px) 90vw, 30vw" />
-                </div>
-                <figcaption>{img.alt}</figcaption>
-              </figure>
-            ))}
-          </div>
+          <ClinicGallery />
         </div>
       </section>
       <section className="section muted-section">

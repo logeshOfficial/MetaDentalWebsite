@@ -19,3 +19,18 @@ For a future business relocation, update both human-readable address/hours and t
 ## Publish reviewed content
 
 For each treatment, set clinicalReview.status to approved only after review, and enter reviewer and reviewedAt (YYYY-MM-DD). To publish a blog entry, record its reviewer and reviewedAt and change status to published. Update related links as appropriate. Rebuild after configuration changes. The global ENABLE_INDEXING switch remains off until production is ready.
+
+## Clinic photo gallery
+
+The homepage and Our clinic page share **src/config/gallery.json**. No layout code needs to change when photos are added or replaced.
+
+1. Copy your new JPG, PNG or WebP into **public/images/gallery/**. Use a simple filename such as `reception-2026.jpg`.
+2. Open **src/config/gallery.json**. Duplicate a photo entry and give it a unique `id`.
+3. Set `src` to `/images/gallery/reception-2026.jpg` (do not include `public`). Set `alt` to a factual description and `caption` to the visible title. `category` is the small label above the title.
+4. Set `visible` to `true` to show it, or `false` to hide it. Rearrange the entries to change the order. The photo count and viewer navigation update automatically.
+5. Set `featured` to `true` for a taller tile (normally just the first photo). Use `position` to control its thumbnail crop: `50% 50%` is centered; `50% 30%` favours the top. The full-size viewer always shows the complete photo.
+6. Save, preview on desktop and phone, and rebuild/redeploy to update the live website.
+
+`label` changes the gallery's accessible name and viewer heading; `hint` changes the introduction. There are seven visible photos from the supplied folder and one alternate entrance photo with `visible: false`, ready to enable. Originals in the supplied folder remain untouched. Empty galleries are hidden safely and single-photo galleries disable next/previous navigation.
+
+Other site images remain configurable in **src/config/brand.ts** (logo, hero and clinic images), **src/data/doctors.ts** (portraits), **src/data/articles.ts** (article covers), and **src/data/results.ts** (results). Use local image paths for gallery photos.

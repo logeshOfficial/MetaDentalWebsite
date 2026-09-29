@@ -1,0 +1,86 @@
+{
+  "label": "A glimpse inside META DENTAL",
+  "hint": "Explore our space, meet our team, and see everyday care. Select any photo to take a closer look.",
+  "photos": [
+    {
+      "id": "clinic-entrance",
+      "src": "/images/gallery/clinic-entrance.jpg",
+      "alt": "META DENTAL signboard and glass entrance in Panaiyur",
+      "caption": "Welcome to META DENTAL",
+      "category": "Our clinic",
+      "position": "50% 50%",
+      "featured": true,
+      "visible": true
+    },
+    {
+      "id": "chairside-care",
+      "src": "/images/gallery/chairside-care.jpg",
+      "alt": "Dentist and assistant providing chairside care at META DENTAL",
+      "caption": "Care, up close",
+      "category": "Patient care",
+      "position": "50% 50%",
+      "featured": false,
+      "visible": true
+    },
+    {
+      "id": "our-dentist",
+      "src": "/images/gallery/our-dentist.jpg",
+      "alt": "META DENTAL dentist in a white coat at the clinic",
+      "caption": "The people behind your care",
+      "category": "Our team",
+      "position": "50% 30%",
+      "featured": false,
+      "visible": true
+    },
+    {
+      "id": "dental-consultation",
+      "src": "/images/gallery/dental-consultation.jpg",
+      "alt": "Dentist treating a patient beside the dental equipment",
+      "caption": "Attention in every detail",
+      "category": "Patient care",
+      "position": "50% 50%",
+      "featured": false,
+      "visible": true
+    },
+    {
+      "id": "ecr-frontage",
+      "src": "/images/gallery/ecr-frontage.jpg",
+      "alt": "Street view of META DENTAL with its entrance and signboards",
+      "caption": "Find us on ECR",
+      "category": "Our clinic",
+      "position": "50% 50%",
+      "featured": false,
+      "visible": true
+    },
+    {
+      "id": "team-at-work",
+      "src": "/images/gallery/team-at-work.jpg",
+      "alt": "Two clinicians in blue gowns working together at META DENTAL",
+      "caption": "Working together for your smile",
+      "category": "Patient care",
+      "position": "50% 50%",
+      "featured": false,
+      "visible": true
+    },
+    {
+      "id": "clinical-care",
+      "src": "/images/gallery/clinical-care.jpg",
+      "alt": "Dentist and assistant working beside the META DENTAL monitor",
+      "caption": "A closer look at our care",
+      "category": "Patient care",
+      "position": "50% 50%",
+      "featured": false,
+      "visible": true
+    },
+    {
+      "id": "entrance-alternate",
+      "src": "/images/gallery/entrance-alternate.jpg",
+      "alt": "Alternate street view of the META DENTAL entrance",
+      "caption": "Our Panaiyur entrance",
+      "category": "Our clinic",
+      "position": "50% 50%",
+      "featured": false,
+      "visible": false
+    }
+  ]
+}

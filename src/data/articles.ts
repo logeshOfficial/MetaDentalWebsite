@@ -4,6 +4,7 @@ export type Article = {
   description: string;
   category: string;
   service: string;
+  coverImage?: string;
   status: 'draft' | 'published';
   reviewer: string | null;
   reviewedAt: string | null;

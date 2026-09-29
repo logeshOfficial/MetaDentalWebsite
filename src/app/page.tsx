@@ -11,6 +11,8 @@ import { seo } from '@/lib/seo';
 import { BookButton } from '@/components/site-shell';
 import { ServiceCards, DoctorCards } from '@/components/content-cards';
 import { FAQ, CTA } from '@/components/ui';
+import { GoogleReviews } from '@/components/google-reviews';
+import { ClinicGallery } from '@/components/clinic-gallery';
 export const metadata = seo(
   copy['dentist_in_ecr_chennai_meta_dental'],
   copy['meet_your_dentists_at_meta_dental'],
@@ -156,24 +158,21 @@ export default function Home() {
           <DoctorCards />
         </div>
       </section>
-      <section className="clinic-section">
-        <div className="container clinic-grid">
-          <div className="clinic-photo">
-            <Image
-              src={brand.images.reception.src}
-              alt={brand.images.reception.alt}
-              fill
-              sizes="(max-width:800px) 100vw, 50vw"
-            />
-          </div>
-          <div className="clinic-copy">
-            <p className="eyebrow">{copy['right_here_in_your_neighbourhood']}</p>
-            <h2>
-              {copy['make_yourself']}
-              <br />
-              {copy['at_home']}
-            </h2>
+      <section className="clinic-section" id="gallery">
+        <div className="container">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">{copy['right_here_in_your_neighbourhood']}</p>
+              <h2>
+                {copy['make_yourself']}
+                <br />
+                {copy['at_home']}
+              </h2>
+            </div>
             <p>{copy['a_dental_visit_starts_long_before']}</p>
+          </div>
+          <ClinicGallery />
+          <div className="clinic-address-row">
             <address>{site.address}</address>
             <a href={site.maps} className="text-link" data-event="directions_click">
               {copy['find_your_way_here']}
@@ -183,16 +182,8 @@ export default function Home() {
         </div>
       </section>
       <section className="section" id="reviews">
-        <div className="container review-band">
-          <div>
-            <p className="eyebrow">{copy['patient_perspectives']}</p>
-            <h2>{copy['hear_it_from_our_patients']}</h2>
-            <p>{copy['explore_patient_experiences_on_our_google']}</p>
-          </div>
-          <a className="button secondary" href={site.maps}>
-            {copy['read_reviews_on_google']}
-            <ArrowUpRight size={18} aria-hidden="true" />
-          </a>
+        <div className="container">
+          <GoogleReviews />
         </div>
       </section>
       <section className="section faq-section">
