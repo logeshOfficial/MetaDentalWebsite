@@ -91,7 +91,11 @@ export function BlogCards({ articles }: { articles: Article[] }) {
   return (
     <div className="blog-cards-grid">
       {articles.map((a) => (
-        <Link key={a.slug} href={`/blog/${a.slug}/`} className="blog-card">
+        <Link
+          key={a.slug}
+          href={a.status === 'published' ? `/blog/${a.slug}/` : `/services/${a.service}/`}
+          className="blog-card"
+        >
           {a.coverImage ? (
             <div className="blog-card-image">
               <Image src={a.coverImage} alt={a.title} fill sizes="(max-width: 800px) 90vw, 380px" />
@@ -106,7 +110,8 @@ export function BlogCards({ articles }: { articles: Article[] }) {
             <h3>{a.title}</h3>
             <p>{a.description}</p>
             <span className="card-link">
-              Read guide <ArrowUpRight size={16} aria-hidden="true" />
+              {a.status === 'published' ? 'Read guide' : 'Explore related treatment'}{' '}
+              <ArrowUpRight size={16} aria-hidden="true" />
             </span>
           </div>
         </Link>

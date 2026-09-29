@@ -1,7 +1,6 @@
 import { interfaceCopy } from '@/config/copy';
 const copy = interfaceCopy.app_blog_page;
 import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
 import { articles } from '@/data/articles';
 import { PageIntro, Breadcrumbs, CTA } from '@/components/ui';
 import { BlogCards } from '@/components/showcase';

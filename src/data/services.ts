@@ -25,9 +25,9 @@ export const services: Service[] = [
     category: 'Restore & replace',
     headline: 'A new foundation for your smile.',
     summary:
-      'Explore replacement options for missing teeth with an implant consultation at META DENTAL in Panaiyur.',
+      'Discuss dental implants and implant-supported crowns or bridges at META DENTAL in Panaiyur, ECR.',
     overview:
-      'An implant supports a replacement tooth from within the jaw. Your consultation looks at the gap, neighbouring teeth, gum health and your overall treatment priorities.',
+      'A dental implant can support an individual replacement crown or form part of an implant-supported bridge. Your consultation looks at the gap, neighbouring teeth, gum health and your overall treatment priorities.',
     suitability:
       'People considering replacement of one or more missing teeth can ask whether an implant, bridge or denture would suit them. Suitability requires a clinical assessment.',
     process:
@@ -261,12 +261,13 @@ export const services: Service[] = [
   },
   {
     slug: 'crowns-bridges',
-    name: 'Crowns & bridges',
+    name: 'Dental crowns & bridges',
     category: 'Restore & replace',
     headline: 'Restore shape, function and everyday confidence.',
-    summary: 'Discuss crowns and bridgework with Dr. Imran at META DENTAL, ECR.',
+    summary:
+      'Discuss dental crowns, zirconia crowns, fixed bridges and implant-supported restorations with Dr. Imran at META DENTAL, ECR.',
     overview:
-      'A crown covers and restores a tooth; a bridge replaces a missing tooth using support from adjacent teeth or implants. The appropriate design depends on the supporting structures.',
+      'A dental crown covers and restores a tooth; a fixed dental bridge replaces a missing tooth using support from adjacent teeth or implants. Material options, including zirconia crowns, and the appropriate restoration design depend on the tooth, supporting structures and bite.',
     suitability:
       'A damaged tooth or a gap may prompt a restorative consultation. Your dentist first assesses what can be preserved and how the bite will be supported.',
     process:
@@ -298,9 +299,10 @@ export const services: Service[] = [
     name: 'Dentures',
     category: 'Restore & replace',
     headline: 'Replacement teeth, planned around daily life.',
-    summary: 'Explore removable tooth replacement options at our dental clinic in Panaiyur.',
+    summary:
+      'Explore complete dentures and partial dentures at our dental clinic in Panaiyur, Chennai.',
     overview:
-      'Dentures replace some or all missing teeth with a removable appliance. Planning includes the tissues supporting the denture and your bite.',
+      'Complete dentures can replace a full arch of missing teeth, while partial dentures replace selected teeth. Planning includes the tissues supporting the denture, remaining teeth and your bite.',
     suitability:
       'If several teeth are missing, ask how removable and other replacement options compare for your needs.',
     process:
@@ -531,6 +533,129 @@ export const services: Service[] = [
       reviewer: null,
       reviewedAt: null,
     },
+  },
+  {
+    slug: 'general-dentistry',
+    name: 'General dentistry',
+    category: 'Prevent & protect',
+    headline: 'Start with a clear dental assessment.',
+    summary:
+      'Arrange a general dental consultation for check-ups, tooth concerns and preventive care in Panaiyur, ECR.',
+    overview:
+      'General dentistry brings routine assessment, prevention and treatment planning together. A consultation gives you space to discuss tooth pain, sensitivity, gum concerns, existing dental work or changes you have noticed.',
+    suitability:
+      'A regular check-up or a new concern are both reasons to arrange an appointment. The dentist assesses your oral health before recommending any treatment.',
+    process:
+      'Your dentist asks about your concern and relevant health history, examines your mouth and explains any investigations, preventive advice or treatment options that may be appropriate.',
+    risks:
+      'A general consultation does not replace emergency medical care or guarantee that treatment can be completed at the first visit. Some concerns may need imaging, a follow-up visit or referral.',
+    aftercare:
+      'Follow the individual advice from your assessment and attend reviews at the interval recommended for your oral health needs.',
+    doctor: 'clinic',
+    related: ['dental-cleaning', 'gum-treatment', 'emergency-dentist'],
+    faqs: [
+      {
+        q: 'What can I discuss at a general dental consultation?',
+        a: 'You can discuss routine care, tooth or gum concerns, previous dental work and questions about possible treatment. Recommendations follow an examination.',
+      },
+      {
+        q: 'How much will my consultation cost?',
+        a: 'Contact the clinic for current fees. Any additional investigation or treatment should be explained before you decide how to proceed.',
+      },
+    ],
+    clinicalReview: { status: 'pending', reviewer: null, reviewedAt: null },
+  },
+  {
+    slug: 'restorative-dentistry',
+    name: 'Restorative dentistry',
+    category: 'Restore & replace',
+    headline: 'Plan care around comfort, function and what can be preserved.',
+    summary:
+      'Explore restorative dentistry for damaged, worn or missing teeth at META DENTAL in Panaiyur, Chennai.',
+    overview:
+      'Restorative dentistry focuses on repairing or replacing teeth to support oral function. Depending on assessment, a plan may involve a crown, bridge, denture, implant restoration or coordinated treatment.',
+    suitability:
+      'A damaged tooth, failing restoration, difficulty chewing or missing teeth can prompt a restorative consultation. The condition of the teeth, gums and bite shapes the available options.',
+    process:
+      'The dentist examines what can be preserved, discusses suitable alternatives and explains the sequence, limitations and maintenance needs of the proposed restoration.',
+    risks:
+      'Some restorative procedures require irreversible tooth preparation. Restorations can wear, chip or need replacement, and outcomes depend on oral health and ongoing care.',
+    aftercare:
+      'Clean restorations as instructed, attend planned reviews and contact the clinic if a restoration feels loose, damaged or different when you bite.',
+    doctor: 'dr-imran',
+    related: ['crowns-bridges', 'dental-implants', 'dentures'],
+    faqs: [
+      {
+        q: 'Which restorative treatment is right for me?',
+        a: 'That depends on what needs to be repaired or replaced, the supporting tissues and your priorities. Your dentist can compare appropriate options after assessment.',
+      },
+      {
+        q: 'Can restorative treatment be completed in stages?',
+        a: 'Some plans can be staged. The sequence depends on clinical priorities, healing needs and how the treatments relate to one another.',
+      },
+    ],
+    clinicalReview: { status: 'pending', reviewer: null, reviewedAt: null },
+  },
+  {
+    slug: 'full-mouth-rehabilitation',
+    name: 'Full-mouth rehabilitation',
+    category: 'Restore & replace',
+    headline: 'A coordinated plan for complex restorative needs.',
+    summary:
+      'Discuss full-mouth rehabilitation or reconstruction with Dr. Imran at META DENTAL on ECR, Chennai.',
+    overview:
+      'Full-mouth rehabilitation, sometimes described as full-mouth reconstruction, coordinates care across several teeth when function and restorations need to be considered together. It is an individual treatment plan rather than a single procedure.',
+    suitability:
+      'People with multiple damaged, worn or missing teeth may benefit from a comprehensive assessment. The dentist considers oral health, existing restorations, supporting tissues, bite and treatment priorities.',
+    process:
+      'Assessment and records inform a phased plan. Your dentist explains which needs are urgent, how restorative options fit together, expected maintenance and which parts of the plan are optional.',
+    risks:
+      'Complex treatment can involve several procedures, time commitments and long-term maintenance. Results cannot be guaranteed and the plan may change as clinical findings or healing are reviewed.',
+    aftercare:
+      'Follow the care plan for each restoration and keep scheduled maintenance visits. Report changes in comfort, function or bite to the clinic.',
+    doctor: 'dr-imran',
+    related: ['restorative-dentistry', 'dental-implants', 'crowns-bridges'],
+    faqs: [
+      {
+        q: 'Is full-mouth rehabilitation one procedure?',
+        a: 'No. It is a coordinated plan that may include different treatments over several stages, depending on your assessment and priorities.',
+      },
+      {
+        q: 'Will every tooth need treatment?',
+        a: 'Not necessarily. The aim is to assess the mouth as a whole while preserving healthy teeth and limiting treatment to what is clinically appropriate.',
+      },
+    ],
+    clinicalReview: { status: 'pending', reviewer: null, reviewedAt: null },
+  },
+  {
+    slug: 'geriatric-dentistry',
+    name: 'Dental care for older adults',
+    category: 'Prevent & protect',
+    headline: 'Oral care shaped around changing needs.',
+    summary: 'Arrange geriatric dental care for older adults at META DENTAL in Panaiyur, Chennai.',
+    overview:
+      'Dental needs can change with age, health conditions, medicines, dexterity and existing restorations or dentures. A dental assessment helps identify priorities and plan manageable ongoing care.',
+    suitability:
+      'Older adults can arrange care for routine reviews, gum or tooth concerns, denture comfort, existing restorations or questions about maintaining oral hygiene.',
+    process:
+      'Bring relevant medical and medication information. The dentist assesses oral health, listens to practical concerns and explains preventive, restorative or replacement options when appropriate.',
+    risks:
+      'Medical history and medicines can affect dental planning. Treatment recommendations require an individual assessment and may need coordination with another healthcare professional.',
+    aftercare:
+      'Follow personalised cleaning and denture-care advice and attend reviews at the recommended interval. Ask for practical adaptations if daily oral care is difficult.',
+    doctor: 'clinic',
+    related: ['general-dentistry', 'dentures', 'dental-cleaning'],
+    faqs: [
+      {
+        q: 'Should I bring a medication list?',
+        a: 'Yes. Current medicines and relevant health information help the dentist plan care safely and identify questions that may need discussion with your doctor.',
+      },
+      {
+        q: 'Can a family member or carer attend?',
+        a: 'Ask the clinic when booking. A patient may choose to involve a trusted person while decisions and consent remain centred on the patient.',
+      },
+    ],
+    clinicalReview: { status: 'pending', reviewer: null, reviewedAt: null },
   },
 ];
 export const categories = [

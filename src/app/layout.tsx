@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: { default: 'META DENTAL | Dentist in ECR, Panaiyur', template: '%s | ' + site.name },
   description:
-    'Dental care in Panaiyur on ECR, Chennai. Explore treatments, meet our dentists and book your visit to META DENTAL.',
+    'META DENTAL in Panaiyur on ECR, Chennai offers general, preventive, restorative, cosmetic and orthodontic dental care by appointment.',
   robots: { index: allowIndexing, follow: true },
   icons: { icon: brand.logo.src, shortcut: brand.logo.src, apple: brand.logo.src },
   verification: { google: process.env.GOOGLE_SITE_VERIFICATION || undefined },

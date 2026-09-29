@@ -47,9 +47,9 @@ export const home = {
     'Dental care for every chapter of life. From a routine check-up to a new smile, meet your dentists at META DENTAL in Panaiyur.',
   heroCaption: 'OUR CLINIC IN PANAIYUR',
   heroNote: 'A welcoming space for your next chapter.',
-  treatmentsHeading: 'Good care starts with you.',
+  treatmentsHeading: 'Dental care for every stage of life.',
   treatmentsCopy:
-    "A little prevention. A needed repair. A change you've been considering. Find the care that fits your smile.",
+    'From preventive check-ups and kids’ dentistry to root canal care, crowns, implants and clear aligners, start with the treatment information that fits your concern.',
   featured: [
     'dental-implants',
     'invisible-aligners',

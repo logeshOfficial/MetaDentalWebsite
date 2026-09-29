@@ -127,12 +127,35 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <JsonLd
         data={{
           '@context': 'https://schema.org',
-          '@type': 'WebPage',
-          '@id': absolute('/services/' + s.slug + '/#page'),
-          name: s.name + ' in ECR, Chennai',
-          description: s.summary,
-          url: absolute('/services/' + s.slug + '/'),
-          about: { '@id': absolute('/#clinic') },
+          '@graph': [
+            {
+              '@type': 'WebPage',
+              '@id': absolute('/services/' + s.slug + '/#page'),
+              name: s.name + ' in ECR, Chennai',
+              description: s.summary,
+              url: absolute('/services/' + s.slug + '/'),
+              about: { '@id': absolute('/services/' + s.slug + '/#service') },
+              isPartOf: { '@id': absolute('/#website') },
+            },
+            {
+              '@type': 'Service',
+              '@id': absolute('/services/' + s.slug + '/#service'),
+              name: s.name,
+              serviceType: s.name,
+              description: s.summary,
+              url: absolute('/services/' + s.slug + '/'),
+              provider: { '@id': absolute('/#clinic') },
+              areaServed: { '@type': 'Place', name: 'Panaiyur, ECR, Chennai' },
+            },
+            {
+              '@type': 'FAQPage',
+              mainEntity: s.faqs.map((faq) => ({
+                '@type': 'Question',
+                name: faq.q,
+                acceptedAnswer: { '@type': 'Answer', text: faq.a },
+              })),
+            },
+          ],
         }}
       />
     </>

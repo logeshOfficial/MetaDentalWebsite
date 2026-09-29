@@ -90,11 +90,11 @@ export const interfaceCopy = {
   app_locations_panaiyur_page: {
     dental_clinic_in_panaiyur_on_ecr: 'Dental Clinic in Panaiyur on ECR',
     visit_meta_dental_in_panaiyur_chennai:
-      'Visit META DENTAL in Panaiyur, Chennai. Find our East Coast Road address, clinic hours, appointment options and directions.',
+      'Visit META DENTAL, a dental clinic in Panaiyur on ECR, Chennai, for general, preventive, restorative and orthodontic dental care.',
     one_clinic_panaiyur_chennai: 'ONE CLINIC · PANAIYUR, CHENNAI',
     your_dental_clinic_on_east_coast: 'Your dental clinic on East Coast Road.',
     meta_dental_is_located_in_panaiyur:
-      'META DENTAL is located in Panaiyur, with restorative, orthodontic and family dental care available by appointment.',
+      'META DENTAL is located in Panaiyur on East Coast Road, with general, restorative, orthodontic, preventive and family dental care available by appointment.',
     find_the_clinic: 'Find the clinic',
     use_our: 'Use our ',
     google_maps_listing: 'Google Maps listing',
@@ -126,7 +126,7 @@ export const interfaceCopy = {
     '0': '0',
     dentist_in_ecr_chennai_meta_dental: 'Dentist in ECR, Chennai — Panaiyur',
     meet_your_dentists_at_meta_dental:
-      'Meet your dentists at META DENTAL, Panaiyur on ECR. Explore implants, aligners, family dental care and convenient appointment booking.',
+      'Visit META DENTAL in Panaiyur on ECR, Chennai for dental consultations, implants, crowns, root canal care, aligners and family dentistry.',
     explore_treatments: 'Explore treatments',
     have_a_question_before_you_visit: 'Have a question before you visit?',
     lets_talk_on_whatsapp: 'Let’s talk on WhatsApp',
@@ -198,11 +198,11 @@ export const interfaceCopy = {
   app_services_page: {
     dental_treatments_in_ecr_chennai: 'Dental Treatments in ECR, Chennai',
     explore_dental_implants_aligners_root_canal:
-      'Explore dental implants, aligners, root canal treatment, cosmetic and family dental care at META DENTAL in Panaiyur.',
+      'Explore dental implants, crowns, bridges, dentures, root canal treatment, clear aligners and preventive dental care in Panaiyur, ECR.',
     dental_treatments: 'DENTAL TREATMENTS',
     care_shaped_around_your_smile: 'Care shaped around your smile.',
     explore_your_options_understand_what_to:
-      'Explore your options, understand what to expect and start with a consultation.',
+      'Explore general, preventive, restorative, cosmetic and orthodontic care, understand what to expect and start with a consultation.',
   },
   app_services_slug_page: {
     understanding_your_options: 'Understanding your options',
