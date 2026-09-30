@@ -33,4 +33,13 @@ export const site = {
   },
 };
 export const allowIndexing = process.env.ENABLE_INDEXING === 'true';
-export const absolute = (pathname: string) => new URL(pathname, site.url).toString();
+export const absolute = (pathname: string) => {
+  if (/^https?:\/\//.test(pathname)) return pathname;
+  const base = new URL(`${site.url}/`);
+  const normalized = pathname.replace(/^\/+/, '');
+  const basePath = base.pathname.replace(/^\/+|\/+$/g, '');
+  if (basePath && (normalized === basePath || normalized.startsWith(`${basePath}/`))) {
+    return new URL(`/${normalized}`, base.origin).toString();
+  }
+  return new URL(normalized, base).toString();
+};

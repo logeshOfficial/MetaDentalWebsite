@@ -40,7 +40,7 @@ export const reviews = [
 ] as const;
 
 export const home = {
-  eyebrow: 'YOUR NEIGHBOURHOOD DENTAL CLINIC · ECR, CHENNAI',
+  eyebrow: 'Best DENTAL CLINIC in ECR, CHENNAI',
   title: 'Thoughtful care.',
   titleAccent: 'Confident smiles.',
   description:

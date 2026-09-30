@@ -1,3 +1,5 @@
+import { assetPath } from '@/lib/paths';
+
 export const doctors = [
   {
     slug: 'dr-imran',
@@ -5,7 +7,7 @@ export const doctors = [
     role: 'Prosthodontist & Implant Dentist',
     qualification: 'Dedicated Prosthodontist trained at Govt. Dental College & Hospital, Patiala. He specializes in crown & bridge work, veneers, laminates, implant-supported restorations, maxillofacial prosthetics, and full mouth rehabilitation in complex cases.',
     education: 'Government Dental College & Hospital, Patiala',
-    image: '/images/dr-imran.jpg',
+    image: assetPath('/images/dr-imran.jpg'),
     intro: 'A considered approach to restoring your smile.',
     bio: 'Dr. Imran focuses on rebuilding teeth and restoring oral function. His areas of practice include implant restorations, crowns, bridges and full-mouth rehabilitation.',
     interests: [
@@ -28,7 +30,7 @@ export const doctors = [
     role: 'Orthodontist & Aligner Specialist',
     qualification: 'Highly accomplished orthodontist from Maulana Azad Institute of Dental Sciences, New Delhi. She is Invisalign & Graphy certified, proficient in aligner therapy, growth modification, and smile designing — blending science, technology, and artistry.',
     education: 'Maulana Azad Institute of Dental Sciences, New Delhi',
-    image: '/images/dr-amrin.jpg',
+    image: assetPath('/images/dr-amrin.jpg'),
     intro: 'Thoughtful planning. A smile that feels like you.',
     bio: 'Dr. Amrin Rizwana focuses on tooth alignment and bite correction. Her practice includes braces, clear aligners and growth modification, with treatment planning shaped around each patient’s needs.',
     interests: [

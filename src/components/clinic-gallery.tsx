@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { ArrowLeft, ArrowRight, Expand, X } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import gallery from '@/config/gallery.json';
+import { assetPath } from '@/lib/paths';
 
 const photos = gallery.photos.filter((photo) => photo.visible);
 
@@ -58,7 +59,7 @@ export function ClinicGallery() {
             }}
           >
             <Image
-              src={item.src}
+              src={assetPath(item.src)}
               alt={item.alt}
               fill
               sizes="(max-width: 600px) 90vw, (max-width: 900px) 45vw, 40vw"
@@ -122,7 +123,7 @@ export function ClinicGallery() {
             >
               <Image
                 key={photo.id}
-                src={photo.src}
+                src={assetPath(photo.src)}
                 alt={photo.alt}
                 fill
                 sizes="100vw"

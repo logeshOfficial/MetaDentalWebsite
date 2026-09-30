@@ -3,6 +3,9 @@ import { services, isServiceApproved } from '@/data/services';
 import { doctors } from '@/data/doctors';
 import { articles } from '@/data/articles';
 import { absolute, allowIndexing } from '@/lib/site';
+
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   if (!allowIndexing) return [];
   const paths = [

@@ -82,6 +82,8 @@ export function GoogleReviews() {
   const pages = Math.max(1, Math.ceil(feed.reviews.length / PAGE_SIZE));
 
   useEffect(() => {
+    if (process.env.NEXT_PUBLIC_STATIC_DEMO === 'true') return;
+
     fetch('/api/google-reviews')
       .then((response) => {
         if (!response.ok) throw new Error();

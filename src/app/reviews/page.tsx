@@ -34,7 +34,7 @@ export default function Page() {
               <span className="star-row" aria-label="5 stars">
                 {'★★★★★'}
               </span>
-              <span className="badge-count">128+ Google Reviews</span>
+              <span className="badge-count">200+ Google Reviews</span>
             </div>
           </div>
           <ReviewCards />

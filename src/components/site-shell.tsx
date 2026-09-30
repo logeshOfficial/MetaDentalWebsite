@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight, Phone, CalendarDays, MessageCircle, MapPin } from 'lucide-react';
 import { site } from '@/lib/site';
+import { assetPath } from '@/lib/paths';
 const nav = navigation.map((item) => [item.label, item.href]);
 export function BookButton({
   label = labels.book,
@@ -106,7 +107,13 @@ export function Footer() {
               rel="noreferrer"
               aria-label="META DENTAL on Instagram"
             >
-              <Image src="/icons/instagram.svg" alt="" width={20} height={20} unoptimized />{' '}
+              <Image
+                src={assetPath('/icons/instagram.svg')}
+                alt=""
+                width={20}
+                height={20}
+                unoptimized
+              />{' '}
               Instagram
             </a>
           </div>

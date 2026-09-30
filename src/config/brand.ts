@@ -1,8 +1,10 @@
+import { assetPath } from '@/lib/paths';
+
 // Edit the brand here; layouts read these values automatically.
 export const brand = {
   monogram: 'M',
   logo: {
-    src: '/brand/meta-dental-logo.svg',
+    src: assetPath('/brand/meta-dental-logo.svg'),
     alt: 'META DENTAL tooth and implant logo',
     width: 64,
     height: 64,
@@ -26,12 +28,12 @@ export const brand = {
     footerMuted: '#c0d4ce',
   },
   images: {
-    hero: { src: '/images/clinic.jpg', alt: 'Treatment room at META DENTAL, Panaiyur' },
-    reception: { src: '/images/reception.jpg', alt: 'Reception at META DENTAL' },
-    treatment: { src: '/images/treatment.jpg', alt: 'Dental treatment suite at META DENTAL' },
-    exterior: { src: '/images/exterior.jpg', alt: 'META DENTAL entrance on East Coast Road' },
+    hero: { src: assetPath('/images/clinic.jpg'), alt: 'Treatment room at META DENTAL, Panaiyur' },
+    reception: { src: assetPath('/images/reception.jpg'), alt: 'Reception at META DENTAL' },
+    treatment: { src: assetPath('/images/treatment.jpg'), alt: 'Dental treatment suite at META DENTAL' },
+    exterior: { src: assetPath('/images/exterior.jpg'), alt: 'META DENTAL entrance on East Coast Road' },
     clinicalCare: {
-      src: '/images/treatment.jpg',
+      src: assetPath('/images/treatment.jpg'),
       alt: 'META DENTAL clinical treatment room prepared for patient care',
     },
   },

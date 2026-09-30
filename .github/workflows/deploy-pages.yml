@@ -1,0 +1,60 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Prepare static demo
+        run: |
+          mv src/app/api/google-reviews "$RUNNER_TEMP/google-reviews-route"
+          mv 'src/app/blog/[slug]' "$RUNNER_TEMP/blog-slug-route"
+
+      - name: Build website
+        env:
+          GITHUB_PAGES: 'true'
+          NEXT_PUBLIC_STATIC_DEMO: 'true'
+          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+          NEXT_PUBLIC_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+          ENABLE_INDEXING: 'false'
+        run: npm run build
+
+      - name: Add GitHub Pages marker
+        run: touch out/.nojekyll
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+      - name: Publish website
+        id: deployment
+        uses: actions/deploy-pages@v4
