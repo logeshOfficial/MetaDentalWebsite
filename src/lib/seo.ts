@@ -29,6 +29,11 @@ export const clinicSchema = {
   email: site.email,
   image: absolute(brand.images.hero.src),
   logo: absolute(brand.logo.src),
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 12.888780216689725,
+    longitude: 80.24270407454533,
+  },
   address: { '@type': 'PostalAddress', ...site.postalAddress },
   openingHoursSpecification: [
     {

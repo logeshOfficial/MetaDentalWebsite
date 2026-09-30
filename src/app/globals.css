@@ -658,7 +658,152 @@ footer {
   border: 0;
 }
 .contact-map {
-  margin: 32px 0 40px;
+  margin-top: 28px;
+}
+.contact-layout {
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: clamp(42px, 5vw, 80px);
+}
+.contact-main h2 {
+  margin: 10px 0 12px;
+  font-size: 1.85rem;
+  letter-spacing: -0.03em;
+}
+.contact-lead {
+  max-width: 680px;
+  margin: 0 0 28px;
+  color: var(--muted);
+}
+.contact-action-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.contact-action-card {
+  min-width: 0;
+  min-height: 245px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--background);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.contact-action-card:hover {
+  transform: translateY(-2px);
+  border-color: #095b5360;
+  box-shadow: 0 14px 34px #153d390c;
+}
+.contact-action-icon {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--primary);
+}
+.contact-action-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.08rem;
+}
+.contact-action-card p {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 0.83rem;
+  line-height: 1.65;
+}
+.contact-action-links,
+.contact-action-link {
+  margin-top: auto;
+}
+.contact-action-links a,
+.contact-action-link {
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.contact-action-links a {
+  display: block;
+  margin-top: 5px;
+}
+.contact-action-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  overflow-wrap: anywhere;
+}
+.contact-route {
+  margin-top: 48px;
+  padding-top: 44px;
+  border-top: 1px solid var(--border);
+}
+.contact-route-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.contact-route-heading .button {
+  flex-shrink: 0;
+}
+.contact-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px 22px;
+  border-radius: 10px;
+  background: var(--surface);
+}
+.contact-address > svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--primary);
+}
+.contact-address address {
+  margin-bottom: 7px;
+  color: var(--ink);
+  font-style: normal;
+  font-weight: 700;
+}
+.contact-address p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+.contact-note-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+.contact-note-grid > section {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.contact-note-grid svg {
+  flex-shrink: 0;
+  color: var(--primary);
+}
+.contact-note-grid h2 {
+  margin: 0 0 7px;
+  font-size: 1rem;
+}
+.contact-note-grid p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.65;
 }
 .footer-map {
   display: grid;
@@ -978,6 +1123,16 @@ footer {
     gap: 40px;
     grid-template-columns: minmax(0, 1fr) 310px;
   }
+  .contact-layout {
+    grid-template-columns: minmax(0, 1fr) 310px;
+  }
+  .contact-action-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact-action-card:last-child {
+    grid-column: 1 / -1;
+    min-height: 210px;
+  }
   .quick-info-grid {
     gap: 20px;
   }
@@ -1179,6 +1334,16 @@ footer {
   .article-layout {
     grid-template-columns: 1fr;
     gap: 35px;
+  }
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+  .contact-route-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .contact-note-grid {
+    grid-template-columns: 1fr;
   }
   .visit-card {
     position: static;
@@ -1905,6 +2070,14 @@ footer {
   }
   .footer-grid > div:first-child {
     grid-column: auto;
+  }
+  .contact-action-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-action-card,
+  .contact-action-card:last-child {
+    grid-column: auto;
+    min-height: 0;
   }
   .google-map iframe {
     min-height: 300px;
