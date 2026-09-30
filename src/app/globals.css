@@ -485,11 +485,12 @@ address {
 }
 .doctor-image {
   position: relative;
-  height: 360px;
+  height: 440px;
   background: var(--surface);
 }
 .doctor-image img {
-  object-position: center 20%;
+  object-fit: contain;
+  object-position: center bottom;
 }
 .doctor-copy {
   padding: 26px 30px;
@@ -911,6 +912,38 @@ footer {
   color: var(--ink);
   line-height: 1.6;
 }
+.blog-article-cover {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin: 0 0 34px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+.blog-article-cover img {
+  object-fit: cover;
+}
+.blog-article > section {
+  scroll-margin-top: 120px;
+}
+.blog-article-next-step {
+  margin-top: 54px;
+  padding: 34px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+.blog-article-next-step h2 {
+  margin-top: 0;
+}
+.blog-article-next-step p {
+  max-width: 620px;
+}
+.blog-article-next-step .button {
+  color: var(--on-primary);
+  text-decoration: none;
+}
 .visit-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -991,7 +1024,8 @@ footer {
   background: var(--surface);
 }
 .profile-image img {
-  object-position: top;
+  object-fit: contain;
+  object-position: center top;
 }
 .profile-grid h1 {
   font-size: 3.2rem;
@@ -1252,7 +1286,7 @@ footer {
     padding: 55px 0;
   }
   .doctor-image {
-    height: 300px;
+    height: 390px;
   }
   .doctor-copy {
     padding: 23px;
@@ -1449,7 +1483,7 @@ footer {
     grid-template-columns: 1fr;
   }
   .doctor-image {
-    height: 365px;
+    height: 410px;
   }
   .clinic-photo {
     min-height: 280px;

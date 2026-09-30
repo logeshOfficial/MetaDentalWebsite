@@ -2,6 +2,7 @@ import { interfaceCopy } from '@/config/copy';
 const copy = interfaceCopy.app_blog_slug_page;
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { articles } from '@/data/articles';
 import { seo } from '@/lib/seo';
 import { absolute } from '@/lib/site';
@@ -33,7 +34,18 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       </div>
       <PageIntro eyebrow={a.category} title={a.title} description={a.description} />
       <section className="section">
-        <article className="container narrow prose">
+        <article className="container narrow prose blog-article">
+          {a.coverImage ? (
+            <figure className="blog-article-cover">
+              <Image
+                src={a.coverImage}
+                alt={a.coverAlt ?? a.title}
+                fill
+                sizes="(max-width: 900px) 100vw, 800px"
+                priority
+              />
+            </figure>
+          ) : null}
           {a.reviewer && a.reviewedAt ? (
             <p>
               {copy['reviewed_by']}
@@ -49,10 +61,21 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           {a.sections.map((s) => (
             <section key={s.heading}>
               <h2>{s.heading}</h2>
-              <p>{s.text}</p>
+              {s.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
             </section>
           ))}
-          <Link href={'/services/' + a.service + '/'}>{copy['explore_related_treatment']}</Link>
+          <div className="blog-article-next-step">
+            <h2>Discuss your own needs with a dentist</h2>
+            <p>
+              These guides provide general information. A consultation is needed before a dentist
+              can recommend treatment for you.
+            </p>
+            <Link className="button" href={'/services/' + a.service + '/'}>
+              {copy['explore_related_treatment']}
+            </Link>
+          </div>
         </article>
       </section>
       <CTA />
@@ -63,9 +86,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           headline: a.title,
           description: a.description,
           url: absolute('/blog/' + slug + '/'),
-          dateModified: a.reviewedAt,
           author: { '@type': 'Organization', name: 'META DENTAL' },
-          reviewedBy: { '@type': 'Person', name: a.reviewer },
+          ...(a.reviewedAt ? { dateModified: a.reviewedAt } : {}),
+          ...(a.reviewer ? { reviewedBy: { '@type': 'Person', name: a.reviewer } } : {}),
           publisher: { '@id': absolute('/#clinic') },
         }}
       />
