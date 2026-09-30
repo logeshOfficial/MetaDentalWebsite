@@ -42,7 +42,7 @@ export const navigation = [
   { label: 'Treatments', href: '/services/' },
   { label: 'Our doctors', href: '/doctors/' },
   { label: 'Our clinic', href: '/about/' },
-  { label: 'Patient stories', href: '/reviews/' },
+  { label: 'Reviews', href: '/reviews/' },
   { label: 'Blog', href: '/blog/' },
   { label: 'Contact', href: '/contact/' },
 ];
