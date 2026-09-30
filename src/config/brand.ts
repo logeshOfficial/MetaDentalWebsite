@@ -42,6 +42,7 @@ export const navigation = [
   { label: 'Treatments', href: '/services/' },
   { label: 'Our doctors', href: '/doctors/' },
   { label: 'Our clinic', href: '/about/' },
+  { label: 'Gallery', href: '/gallery/' },
   { label: 'Reviews', href: '/reviews/' },
   { label: 'Blog', href: '/blog/' },
   { label: 'Contact', href: '/contact/' },
@@ -49,6 +50,7 @@ export const navigation = [
 
 export const footerNavigation = [
   { label: 'About the clinic', href: '/about/' },
+  { label: 'Clinic gallery', href: '/gallery/' },
   { label: 'Meet our doctors', href: '/doctors/' },
   { label: 'Treatments', href: '/services/' },
   { label: 'Patient reviews', href: '/reviews/' },
