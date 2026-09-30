@@ -3,6 +3,7 @@ const copy = interfaceCopy.app_contact_page;
 import { PageIntro, Breadcrumbs, VisitCard, CTA } from '@/components/ui';
 import { site } from '@/lib/site';
 import { seo } from '@/lib/seo';
+import { GoogleMap } from '@/components/google-map';
 export const metadata = seo(
   copy['contact_directions_panaiyur_ecr'],
   copy['find_meta_dental_at_1130_east'],
@@ -47,6 +48,7 @@ export default function Page() {
             <a className="button" href={site.maps} data-event="directions_click">
               {copy['open_location_in_google_maps']}
             </a>
+            <GoogleMap className="contact-map" />
             <h2>{copy['before_travelling']}</h2>
             <p>{copy['confirm_your_appointment_first_please_call']}</p>
             <h2>{copy['urgent_concerns']}</h2>

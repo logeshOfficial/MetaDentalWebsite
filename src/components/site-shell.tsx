@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { ArrowUpRight, Phone, CalendarDays, MessageCircle, MapPin } from 'lucide-react';
 import { site } from '@/lib/site';
 import { assetPath } from '@/lib/paths';
+import { GoogleMap } from './google-map';
 const nav = navigation.map((item) => [item.label, item.href]);
 export function BookButton({
   label = labels.book,
@@ -141,6 +142,13 @@ export function Footer() {
               {site.email}
             </a>
           </div>
+        </div>
+        <div className="container footer-map">
+          <div>
+            <p className="eyebrow">Find us in Panaiyur</p>
+            <h2>META DENTAL on East Coast Road</h2>
+          </div>
+          <GoogleMap />
         </div>
         <div className="container footer-bottom">
           <span>
