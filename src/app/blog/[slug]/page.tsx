@@ -7,19 +7,19 @@ import { seo } from '@/lib/seo';
 import { absolute } from '@/lib/site';
 import { JsonLd } from '@/components/json-ld';
 import { PageIntro, Breadcrumbs, CTA } from '@/components/ui';
-const published = articles.filter((a) => a.status === 'published' && a.reviewer && a.reviewedAt);
 export const dynamicParams = false;
 export function generateStaticParams() {
-  return published.map((a) => ({ slug: a.slug }));
+  return articles.map((a) => ({ slug: a.slug }));
 }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const a = published.find((a) => a.slug === slug);
-  return a ? seo(a.title, a.description, '/blog/' + slug + '/') : {};
+  const a = articles.find((article) => article.slug === slug);
+  const clinicallyReviewed = Boolean(a?.status === 'published' && a.reviewer && a.reviewedAt);
+  return a ? seo(a.title, a.description, '/blog/' + slug + '/', clinicallyReviewed) : {};
 }
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const a = published.find((a) => a.slug === slug);
+  const a = articles.find((article) => article.slug === slug);
   if (!a) notFound();
   return (
     <>
@@ -34,11 +34,18 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <PageIntro eyebrow={a.category} title={a.title} description={a.description} />
       <section className="section">
         <article className="container narrow prose">
-          <p>
-            {copy['reviewed_by']}
-            {a.reviewer} {copy['text']}
-            {a.reviewedAt}
-          </p>
+          {a.reviewer && a.reviewedAt ? (
+            <p>
+              {copy['reviewed_by']}
+              {a.reviewer} {copy['text']}
+              {a.reviewedAt}
+            </p>
+          ) : (
+            <p className="medical-note">
+              Preview guide awaiting clinical review. General information only; it does not replace
+              an individual dental assessment.
+            </p>
+          )}
           {a.sections.map((s) => (
             <section key={s.heading}>
               <h2>{s.heading}</h2>

@@ -34,9 +34,7 @@ jobs:
         run: npm install --no-audit --no-fund
 
       - name: Prepare static demo
-        run: |
-          mv src/app/api/google-reviews "$RUNNER_TEMP/google-reviews-route"
-          mv 'src/app/blog/[slug]' "$RUNNER_TEMP/blog-slug-route"
+        run: mv src/app/api/google-reviews "$RUNNER_TEMP/google-reviews-route"
 
       - name: Build website
         env:

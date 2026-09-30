@@ -1,3 +1,5 @@
+import { assetPath } from '@/lib/paths';
+
 export type Article = {
   slug: string;
   title: string;
@@ -18,6 +20,7 @@ export const articles: Article[] = [
       'Understand what to ask about assessment, implant treatment, the final tooth and maintenance when comparing estimates.',
     category: 'Dental implants',
     service: 'dental-implants',
+    coverImage: assetPath('/images/treatment.jpg'),
     status: 'draft',
     reviewer: null,
     reviewedAt: null,
@@ -43,6 +46,7 @@ export const articles: Article[] = [
       'Questions about everyday routines, appointments and retention to bring to your orthodontic consultation.',
     category: 'Orthodontics & aligners',
     service: 'invisible-aligners',
+    coverImage: assetPath('/images/gallery/dental-consultation.jpg'),
     status: 'draft',
     reviewer: null,
     reviewedAt: null,
@@ -68,6 +72,7 @@ export const articles: Article[] = [
       'What to bring, how to find the clinic and how to make the most of your appointment.',
     category: 'Visiting the clinic',
     service: 'dental-cleaning',
+    coverImage: assetPath('/images/exterior.jpg'),
     status: 'draft',
     reviewer: null,
     reviewedAt: null,

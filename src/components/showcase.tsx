@@ -93,7 +93,7 @@ export function BlogCards({ articles }: { articles: Article[] }) {
       {articles.map((a) => (
         <Link
           key={a.slug}
-          href={a.status === 'published' ? `/blog/${a.slug}/` : `/services/${a.service}/`}
+          href={`/blog/${a.slug}/`}
           className="blog-card"
         >
           {a.coverImage ? (
@@ -110,7 +110,7 @@ export function BlogCards({ articles }: { articles: Article[] }) {
             <h3>{a.title}</h3>
             <p>{a.description}</p>
             <span className="card-link">
-              {a.status === 'published' ? 'Read guide' : 'Explore related treatment'}{' '}
+              {a.status === 'published' ? 'Read guide' : 'Preview guide'}{' '}
               <ArrowUpRight size={16} aria-hidden="true" />
             </span>
           </div>

@@ -43,6 +43,7 @@ export const navigation = [
   { label: 'Our doctors', href: '/doctors/' },
   { label: 'Our clinic', href: '/about/' },
   { label: 'Patient stories', href: '/reviews/' },
+  { label: 'Blog', href: '/blog/' },
   { label: 'Contact', href: '/contact/' },
 ];
 
