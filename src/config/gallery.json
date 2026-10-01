@@ -123,6 +123,16 @@
       "visible": true
     },
     {
+      "id": "implant-systems",
+      "src": "/images/gallery/implant-systems.webp",
+      "alt": "Illustrated overview of established dental implant systems and components",
+      "caption": "Understanding implant systems",
+      "category": "Implant library",
+      "position": "50% 50%",
+      "featured": false,
+      "visible": true
+    },
+    {
       "id": "entrance-alternate",
       "src": "/images/gallery/entrance-alternate.jpg",
       "alt": "Alternate street view of the META DENTAL entrance",
