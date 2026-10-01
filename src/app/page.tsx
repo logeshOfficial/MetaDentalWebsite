@@ -7,6 +7,7 @@ import { brand } from '@/config/brand';
 import { home } from '@/data/home';
 import { services } from '@/data/services';
 import { site } from '@/lib/site';
+import { assetPath } from '@/lib/paths';
 import { seo } from '@/lib/seo';
 import { BookButton } from '@/components/site-shell';
 import { ServiceCards, DoctorCards } from '@/components/content-cards';
@@ -94,6 +95,35 @@ export default function Home() {
               </a>
             </span>
           </div>
+        </div>
+      </section>
+      <section className="implant-home-feature" aria-labelledby="home-implant-title">
+        <div className="container implant-home-grid">
+          <div className="implant-home-copy">
+            <p className="eyebrow">Implant systems at META DENTAL</p>
+            <h2 id="home-implant-title">A closer look at implant systems.</h2>
+            <p>
+              Implant treatment combines the implant body, connecting components and the final
+              restoration. Explore established systems and learn how your dentist plans the right
+              option around your oral health and treatment needs.
+            </p>
+            <Link className="text-link" href="/services/dental-implants/">
+              Explore dental implants
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </Link>
+          </div>
+          <Link
+            className="implant-home-image"
+            href="/services/dental-implants/#implant-library-title"
+            aria-label="Open the META DENTAL implant systems library"
+          >
+            <Image
+              src={assetPath('/images/gallery/implant-systems.webp')}
+              alt="Illustrated overview of established dental implant systems and components"
+              fill
+              sizes="(max-width: 800px) 100vw, 56vw"
+            />
+          </Link>
         </div>
       </section>
       <section className="section" id="services">

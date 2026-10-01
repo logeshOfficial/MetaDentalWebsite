@@ -361,6 +361,61 @@ address {
   color: var(--muted);
   text-decoration: none;
 }
+.implant-home-feature {
+  padding: 64px 0;
+  background: var(--ink);
+  color: var(--on-primary);
+}
+.implant-home-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: 64px;
+}
+.implant-home-copy .eyebrow {
+  color: var(--accent-on-primary);
+  margin-bottom: 14px;
+}
+.implant-home-copy h2 {
+  margin-bottom: 18px;
+  font-size: clamp(2rem, 3.4vw, 3.4rem);
+}
+.implant-home-copy p:not(.eyebrow) {
+  color: var(--on-primary-muted);
+}
+.implant-home-copy .text-link {
+  color: var(--on-primary);
+  text-decoration-color: #ffffff66;
+}
+.implant-home-image {
+  position: relative;
+  display: block;
+  min-height: 390px;
+  overflow: hidden;
+  border: 1px solid #ffffff33;
+  border-radius: 16px;
+  background: #062b48;
+}
+.implant-home-image img {
+  object-fit: contain;
+  transition: transform 0.35s ease;
+}
+.implant-home-image:hover img {
+  transform: scale(1.02);
+}
+@media (max-width: 800px) {
+  .implant-home-feature {
+    padding: 52px 0;
+  }
+  .implant-home-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .implant-home-image {
+    min-height: 0;
+    aspect-ratio: 40 / 21;
+  }
+}
 .section-heading {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
