@@ -41,8 +41,8 @@ export const reviews = [
 
 export const home = {
   eyebrow: 'Best DENTAL CLINIC in ECR, CHENNAI',
-  title: 'Thoughtful care.',
-  titleAccent: 'Confident smiles.',
+  title: 'Crafting smiles',
+  titleAccent: 'and beyond.',
   description:
     'Dental care for every chapter of life. From a routine check-up to a new smile, meet your dentists at META DENTAL in Panaiyur.',
   heroCaption: 'OUR CLINIC IN PANAIYUR',
