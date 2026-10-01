@@ -237,7 +237,7 @@ export const interfaceCopy = {
     menu: 'Menu',
     mobile_navigation: 'Mobile navigation',
     book_a_visit_1: 'Book a visit',
-    advanced_dental_care: 'Advanced dental care.',
+    advanced_dental_care: 'Crafting smiles and beyond.',
     right_here_on_ecr: 'Right here on ECR.',
     explore: 'Explore',
     plan_your_visit: 'Plan your visit',

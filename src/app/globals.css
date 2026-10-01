@@ -2070,6 +2070,7 @@ footer {
 }
 .brand small {
   font-size: 0.625rem;
+  white-space: nowrap;
 }
 .footer-grid,
 .footer-bottom {
@@ -2083,6 +2084,10 @@ footer {
   font-size: 0.8125rem;
 }
 @media (max-width: 500px) {
+  .brand small {
+    font-size: 0.5rem;
+    letter-spacing: 0.11em;
+  }
   .quick-info-grid {
     grid-template-columns: 1fr;
   }

@@ -1,6 +1,6 @@
 export const site = {
   name: 'META DENTAL',
-  tagline: 'Advanced Dental Care',
+  tagline: 'Crafting Smiles and Beyond',
   url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://metadental.in').replace(/\/$/, ''),
   phone: '+91 90944 65709',
   phoneHref: 'tel:+919094465709',
