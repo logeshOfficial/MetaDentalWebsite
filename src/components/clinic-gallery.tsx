@@ -11,10 +11,21 @@ const photos = gallery.photos.filter((photo) => photo.visible);
 export function ClinicGallery() {
   const [active, setActive] = useState(0);
   const [open, setOpen] = useState(false);
+  const [paused, setPaused] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement | null>(null);
   const touchStart = useRef<number | null>(null);
   const photo = photos[active];
+
+  useEffect(() => {
+    if (open || paused || photos.length < 2) return;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (reducedMotion.matches) return;
+    const timer = window.setInterval(() => {
+      setActive((current) => (current + 1) % photos.length);
+    }, 3000);
+    return () => window.clearInterval(timer);
+  }, [open, paused]);
 
   useEffect(() => {
     if (!open) return;
@@ -42,6 +53,68 @@ export function ClinicGallery() {
       <div className="photo-gallery-intro">
         <p>{gallery.hint}</p>
         <span>{String(photos.length).padStart(2, '0')} photographs</span>
+      </div>
+      <div
+        className="photo-carousel"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onFocusCapture={() => setPaused(true)}
+        onBlurCapture={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget)) setPaused(false);
+        }}
+      >
+        <button
+          type="button"
+          className="photo-carousel-image"
+          aria-label={`Open photo: ${photo.caption}`}
+          aria-haspopup="dialog"
+          onClick={(event) => {
+            trigger.current = event.currentTarget;
+            setOpen(true);
+            dialog.current?.showModal();
+          }}
+        >
+          <Image
+            key={photo.id}
+            src={assetPath(photo.src)}
+            alt={photo.alt}
+            fill
+            priority={active === 0}
+            sizes="(max-width: 900px) 100vw, 1240px"
+            style={{ objectPosition: photo.position }}
+          />
+          <span className="photo-carousel-caption">
+            <small>{photo.category}</small>
+            <strong>{photo.caption}</strong>
+            <span>{String(active + 1).padStart(2, '0')} / {String(photos.length).padStart(2, '0')}</span>
+          </span>
+          <span className="photo-expand">
+            <Expand size={18} aria-hidden="true" />
+          </span>
+        </button>
+        <div className="photo-carousel-controls" aria-label="Gallery controls">
+          <button type="button" onClick={() => move(-1)} aria-label="Previous gallery photo">
+            <ArrowLeft aria-hidden="true" />
+          </button>
+          <div className="photo-carousel-dots">
+            {photos.map((item, index) => (
+              <button
+                type="button"
+                key={item.id}
+                className={index === active ? 'active' : ''}
+                onClick={() => setActive(index)}
+                aria-label={`Show ${item.caption}`}
+                aria-current={index === active ? 'true' : undefined}
+              />
+            ))}
+          </div>
+          <button type="button" onClick={() => move(1)} aria-label="Next gallery photo">
+            <ArrowRight aria-hidden="true" />
+          </button>
+        </div>
+        <span className="photo-carousel-status" aria-live="polite">
+          Rotates every 3 seconds · pauses while you explore
+        </span>
       </div>
       <div className="photo-mosaic">
         {photos.map((item, index) => (

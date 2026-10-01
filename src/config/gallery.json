@@ -73,6 +73,56 @@
       "visible": true
     },
     {
+      "id": "reception-stairway",
+      "src": "/images/gallery/reception-stairway.webp",
+      "alt": "Reception stairway and illuminated META DENTAL entrance detail",
+      "caption": "A bright welcome",
+      "category": "Our clinic",
+      "position": "50% 55%",
+      "featured": false,
+      "visible": true
+    },
+    {
+      "id": "clinic-one-entrance",
+      "src": "/images/gallery/clinic-one-entrance.webp",
+      "alt": "Entrance to Clinic 1 at META DENTAL in Panaiyur",
+      "caption": "Your treatment space",
+      "category": "Our clinic",
+      "position": "50% 45%",
+      "featured": false,
+      "visible": true
+    },
+    {
+      "id": "treatment-room-wide",
+      "src": "/images/gallery/treatment-room-wide.webp",
+      "alt": "Clean dental treatment room with chair and clinical equipment at META DENTAL",
+      "caption": "Prepared for your visit",
+      "category": "Treatment room",
+      "position": "50% 55%",
+      "featured": false,
+      "visible": true
+    },
+    {
+      "id": "sterilization-room",
+      "src": "/images/gallery/sterilization-room.webp",
+      "alt": "Clearly marked sterilization room at META DENTAL",
+      "caption": "Dedicated sterilization area",
+      "category": "Clinic standards",
+      "position": "50% 45%",
+      "featured": false,
+      "visible": true
+    },
+    {
+      "id": "treatment-room-overview",
+      "src": "/images/gallery/treatment-room-overview.webp",
+      "alt": "Wide view of a META DENTAL treatment room in Panaiyur",
+      "caption": "A closer look inside",
+      "category": "Treatment room",
+      "position": "50% 50%",
+      "featured": false,
+      "visible": true
+    },
+    {
       "id": "entrance-alternate",
       "src": "/images/gallery/entrance-alternate.jpg",
       "alt": "Alternate street view of the META DENTAL entrance",
