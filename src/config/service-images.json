@@ -1,0 +1,21 @@
+{
+  "dental-implants": { "src": "/images/gallery/implant-systems.webp", "alt": "Dental implant systems and components", "position": "50% 50%" },
+  "invisible-aligners": { "src": "/images/results/aligners-after.png", "alt": "Aligned smile after clear aligner care", "position": "50% 50%" },
+  "braces-orthodontics": { "src": "/images/results/aligners-before.png", "alt": "Dental alignment assessment photograph", "position": "50% 50%" },
+  "root-canal-treatment": { "src": "/images/gallery/dental-consultation.jpg", "alt": "Dentist providing focused tooth care at META DENTAL", "position": "50% 45%" },
+  "cosmetic-dentistry": { "src": "/images/results/smile-after.png", "alt": "Restored smile following individual dental care", "position": "50% 50%" },
+  "smile-designing": { "src": "/images/results/whitening-after.png", "alt": "Natural-looking bright smile", "position": "50% 50%" },
+  "teeth-whitening": { "src": "/images/results/whitening-after.png", "alt": "Bright smile following individual whitening care", "position": "50% 50%" },
+  "crowns-bridges": { "src": "/images/results/smile-after.png", "alt": "Dental restoration and smile care", "position": "50% 50%" },
+  "dentures": { "src": "/images/results/smile-after.png", "alt": "Complete smile and replacement-tooth care", "position": "50% 50%" },
+  "wisdom-tooth-extraction": { "src": "/images/gallery/clinical-care.jpg", "alt": "Clinical dental care at META DENTAL", "position": "50% 45%" },
+  "kids-dentistry": { "src": "/images/gallery/dental-consultation.jpg", "alt": "Gentle dental consultation at META DENTAL", "position": "50% 45%" },
+  "gum-treatment": { "src": "/images/gallery/chairside-care.jpg", "alt": "Chairside dental and gum assessment", "position": "50% 45%" },
+  "laser-dentistry": { "src": "/images/gallery/team-at-work.jpg", "alt": "Dental clinicians providing technology-supported care", "position": "50% 50%" },
+  "dental-cleaning": { "src": "/images/gallery/chairside-care.jpg", "alt": "Dental cleaning and preventive care", "position": "50% 45%" },
+  "emergency-dentist": { "src": "/images/gallery/clinical-care.jpg", "alt": "Prepared dental treatment room for urgent care", "position": "50% 50%" },
+  "general-dentistry": { "src": "/images/gallery/dental-consultation.jpg", "alt": "General dental assessment at META DENTAL", "position": "50% 45%" },
+  "restorative-dentistry": { "src": "/images/results/smile-after.png", "alt": "Restorative dentistry and smile care", "position": "50% 50%" },
+  "full-mouth-rehabilitation": { "src": "/images/results/smile-after.png", "alt": "Full-smile restorative care", "position": "50% 50%" },
+  "geriatric-dentistry": { "src": "/images/gallery/dental-consultation.jpg", "alt": "Personal dental consultation in a modern clinic", "position": "50% 45%" }
+}

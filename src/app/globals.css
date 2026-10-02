@@ -438,8 +438,9 @@ address {
   display: flex;
   flex-direction: column;
   border: 1px solid var(--border);
-  padding: 29px;
+  padding: 0;
   border-radius: 7px;
+  overflow: hidden;
   text-decoration: none;
   transition:
     background 0.2s,
@@ -450,23 +451,56 @@ address {
   background: var(--surface);
   border-color: var(--primary);
 }
-.service-icon {
-  color: var(--primary);
-  margin-bottom: 25px;
+.service-card-media {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--surface);
+}
+.service-card-media img {
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+.service-card:hover .service-card-media img {
+  transform: scale(1.045);
+}
+.service-card-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 25%, rgba(4, 34, 30, 0.9));
+}
+.service-card-overlay {
+  position: absolute;
+  z-index: 1;
+  left: 24px;
+  right: 24px;
+  bottom: 21px;
+  color: #fff;
+}
+.service-card-overlay strong {
+  display: block;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
 }
 .service-category {
+  display: block;
   font-size: 0.69rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--muted);
-  margin-bottom: 10px;
+  color: #e0eeea;
+  margin-bottom: 7px;
 }
-.service-card h3 {
-  font-size: 1.35rem;
-  letter-spacing: -0.03em;
-  font-weight: 650;
+.service-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 24px;
 }
-.service-card p {
+.service-card-summary {
+  display: block;
   font-size: 0.88rem;
   line-height: 1.8;
   color: var(--muted);
@@ -1436,7 +1470,7 @@ footer {
     gap: 15px;
   }
   .service-card {
-    padding: 22px;
+    padding: 0;
   }
   .care-grid {
     gap: 40px;
@@ -1632,10 +1666,7 @@ footer {
     grid-template-columns: 1fr;
   }
   .service-card {
-    padding: 26px;
-  }
-  .service-icon {
-    margin-bottom: 17px;
+    padding: 0;
   }
   .care-grid {
     grid-template-columns: 1fr;

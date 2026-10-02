@@ -2,26 +2,43 @@ import { interfaceCopy } from '@/config/copy';
 const copy = interfaceCopy.components_content_cards;
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight, Sparkles, Smile, ShieldCheck, Heart, CirclePlus, Gem } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { services, type Service } from '@/data/services';
 import { doctors } from '@/data/doctors';
-const icons = [Gem, Smile, CirclePlus, Sparkles, Heart, ShieldCheck];
+import serviceImages from '@/config/service-images.json';
+import { assetPath } from '@/lib/paths';
+
+const imageMap = serviceImages as Record<string, { src: string; alt: string; position: string }>;
 export function ServiceCards({ items = services }: { items?: Service[] }) {
   return (
     <div className="service-grid">
-      {items.map((s, i) => {
-        const Icon = icons[i % icons.length];
+      {items.map((s) => {
+        const media = imageMap[s.slug] ?? {
+          src: '/images/treatment.jpg',
+          alt: 'Treatment room at META DENTAL',
+          position: '50% 50%',
+        };
         return (
           <Link className="service-card" href={'/services/' + s.slug + '/'} key={s.slug}>
-            <span className="service-icon">
-              <Icon size={27} strokeWidth={1.5} aria-hidden="true" />
+            <span className="service-card-media">
+              <Image
+                src={assetPath(media.src)}
+                alt={media.alt}
+                fill
+                sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 390px"
+                style={{ objectPosition: media.position }}
+              />
+              <span className="service-card-overlay">
+                <span className="service-category">{s.category}</span>
+                <strong>{s.name}</strong>
+              </span>
             </span>
-            <span className="service-category">{s.category}</span>
-            <h3>{s.name}</h3>
-            <p>{s.summary}</p>
-            <span className="card-link">
-              {copy['explore_treatment']}
-              <ArrowUpRight size={18} aria-hidden="true" />
+            <span className="service-card-content">
+              <span className="service-card-summary">{s.summary}</span>
+              <span className="card-link">
+                {copy['explore_treatment']}
+                <ArrowUpRight size={18} aria-hidden="true" />
+              </span>
             </span>
           </Link>
         );
