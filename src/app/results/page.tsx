@@ -21,7 +21,7 @@ export default function Page() {
         title="Clinical care, documented with context."
         description="Explore consented clinical photographs supplied by META DENTAL. Each case is individual, and photographs alone cannot determine which treatment is suitable for you."
       />
-      <section className="section">
+      <section className="section results-section">
         <div className="container">
           <div className="results-grid">
             {resultCases.map((item) => (
@@ -51,7 +51,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="section muted-section">
+      <section className="section muted-section results-guidance">
         <div className="container narrow prose">
           <h2>{copy['look_beyond_a_beforeandafter_photograph']}</h2>
           <p>{copy['when_discussing_a_treatment_ask_what']}</p>
