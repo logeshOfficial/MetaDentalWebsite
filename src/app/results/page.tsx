@@ -5,8 +5,8 @@ const copy = interfaceCopy.app_results_page;
 import { seo } from '@/lib/seo';
 import { PageIntro, Breadcrumbs, CTA } from '@/components/ui';
 export const metadata = seo(
-  copy['understanding_dental_treatment_results'],
-  copy['learn_what_to_discuss_when_considering'],
+  'Clinical Case Gallery',
+  'View consented clinical case photographs from META DENTAL in Panaiyur, including implant, cosmetic and aligner cases.',
   '/results/',
   false,
 );
@@ -14,42 +14,36 @@ export default function Page() {
   return (
     <>
       <div className="container">
-        <Breadcrumbs items={[{ name: 'Treatment results', href: '/results/' }]} />
+        <Breadcrumbs items={[{ name: 'Clinical case gallery', href: '/results/' }]} />
       </div>
       <PageIntro
-        eyebrow={copy['treatment_results']}
-        title={copy['every_smile_has_its_own_starting']}
-        description={copy['a_treatment_result_depends_on_your']}
+        eyebrow="CLINICAL CASE GALLERY"
+        title="Clinical care, documented with context."
+        description="Explore consented clinical photographs supplied by META DENTAL. Each case is individual, and photographs alone cannot determine which treatment is suitable for you."
       />
       <section className="section">
         <div className="container">
           <div className="results-grid">
             {resultCases.map((item) => (
-              <article className="result-case" key={item.title}>
+              <article className="result-case" key={item.id}>
+                <p className="result-category">{item.category}</p>
                 <h2>{item.title}</h2>
-                <div className="result-pair">
-                  <figure>
-                    <div>
-                      <Image
-                        src={item.before.src}
-                        alt={item.before.alt}
-                        fill
-                        sizes="(max-width: 700px) 44vw, 270px"
-                      />
-                    </div>
-                    <figcaption>Before</figcaption>
-                  </figure>
-                  <figure>
-                    <div>
-                      <Image
-                        src={item.after.src}
-                        alt={item.after.alt}
-                        fill
-                        sizes="(max-width: 700px) 44vw, 270px"
-                      />
-                    </div>
-                    <figcaption>After</figcaption>
-                  </figure>
+                <p className="result-summary">{item.summary}</p>
+                <div className={`result-pair${item.images.length === 1 ? ' result-single' : ''}`}>
+                  {item.images.map((image) => (
+                    <figure key={image.src}>
+                      <div>
+                        <Image
+                          src={image.src}
+                          alt={image.alt}
+                          fill
+                          sizes={item.images.length === 1 ? '(max-width: 700px) 90vw, 380px' : '(max-width: 700px) 44vw, 270px'}
+                          style={{ objectPosition: image.position ?? '50% 50%' }}
+                        />
+                      </div>
+                      <figcaption>{image.label}</figcaption>
+                    </figure>
+                  ))}
                 </div>
                 <p>{item.note} Individual results vary.</p>
               </article>

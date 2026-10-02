@@ -2362,6 +2362,21 @@ footer {
 .result-case h2 {
   font-size: 1.45rem;
 }
+.result-category {
+  margin: 0 0 7px !important;
+  color: var(--primary) !important;
+  font-size: 0.68rem !important;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.result-summary {
+  min-height: 76px;
+  margin-bottom: 18px !important;
+  color: var(--muted) !important;
+  font-size: 0.82rem !important;
+  line-height: 1.6 !important;
+}
 .result-pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2379,6 +2394,13 @@ footer {
 }
 .result-pair img {
   object-fit: contain;
+}
+.result-pair.result-single {
+  grid-template-columns: 1fr;
+}
+.result-single figure > div {
+  aspect-ratio: 4 / 5;
+  max-height: 470px;
 }
 .result-pair figcaption {
   font-size: 0.75rem;
