@@ -2419,23 +2419,19 @@ footer {
 }
 .result-pair figure > div {
   position: relative;
-  aspect-ratio: 1.45/1;
+  height: 200px;
   overflow: hidden;
   border-radius: 5px;
   background: var(--surface);
 }
 .result-pair img {
-  object-fit: contain;
+  object-fit: cover;
 }
 .result-pair.result-single {
   grid-template-columns: 1fr;
 }
 .result-single figure > div {
-  aspect-ratio: 2.2 / 1;
-  max-height: 300px;
-}
-.result-single img {
-  object-fit: cover;
+  height: 200px;
 }
 .result-pair figcaption {
   font-size: 0.75rem;
@@ -2457,6 +2453,10 @@ footer {
 @media (max-width: 600px) {
   .results-grid {
     grid-template-columns: 1fr;
+  }
+  .result-pair figure > div,
+  .result-single figure > div {
+    height: 160px;
   }
   .footer-brand img {
     width: 52px;
