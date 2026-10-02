@@ -2431,8 +2431,11 @@ footer {
   grid-template-columns: 1fr;
 }
 .result-single figure > div {
-  aspect-ratio: 4 / 5;
-  max-height: 470px;
+  aspect-ratio: 2.2 / 1;
+  max-height: 300px;
+}
+.result-single img {
+  object-fit: cover;
 }
 .result-pair figcaption {
   font-size: 0.75rem;
