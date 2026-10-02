@@ -4,6 +4,85 @@
   --font-sans: var(--font-body);
   --color-brand: var(--primary);
 }
+
+/* Reviews: turn the feedback prompt into a useful patient action panel. */
+.review-feedback-section { padding-block: 64px; }
+.review-feedback-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+  gap: clamp(42px, 6vw, 82px);
+  align-items: center;
+  max-width: 1160px;
+}
+.review-feedback-copy h2 { margin-bottom: 18px; }
+.review-feedback-copy > p:not(.eyebrow) {
+  max-width: 650px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+.review-feedback-note {
+  max-width: 650px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+.review-feedback-note strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+.review-feedback-note p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+.review-feedback-actions { margin-top: 28px; }
+.review-feedback-media {
+  position: relative;
+  min-height: 430px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--border);
+}
+.review-feedback-media img {
+  object-fit: cover;
+  object-position: center 52%;
+}
+.review-feedback-media::after {
+  content: '';
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(180deg, transparent, rgba(7, 45, 41, 0.82));
+}
+.review-feedback-media figcaption {
+  position: absolute;
+  z-index: 1;
+  right: 28px;
+  bottom: 26px;
+  left: 28px;
+  color: #fff;
+  line-height: 1.5;
+}
+.review-feedback-media figcaption span {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+@media (max-width: 900px) {
+  .review-feedback-grid { grid-template-columns: 1fr; }
+  .review-feedback-media { min-height: 380px; }
+}
+@media (max-width: 600px) {
+  .review-feedback-section { padding-block: 48px; }
+  .review-feedback-media { min-height: 310px; }
+  .review-feedback-actions .button { width: 100%; }
+}
 * {
   box-sizing: border-box;
 }

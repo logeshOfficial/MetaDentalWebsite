@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import { brand } from '@/config/brand';
 import { interfaceCopy } from '@/config/copy';
 const copy = interfaceCopy.app_reviews_page;
 import { site } from '@/lib/site';
@@ -40,14 +42,29 @@ export default function Page() {
           <ReviewCards />
         </div>
       </section>
-      <section className="section muted-section">
-        <div className="container narrow prose">
-          <h2>{copy['your_feedback_matters']}</h2>
-          <p>{copy['if_you_have_visited_the_clinic']}</p>
-          <p>{copy['for_questions_about_your_own_treatment']}</p>
-          <a href={site.phoneHref} data-event="phone_click">
-            {site.phone}
-          </a>
+      <section className="section muted-section review-feedback-section">
+        <div className="container review-feedback-grid">
+          <div className="review-feedback-copy">
+            <p className="eyebrow">Share your experience</p>
+            <h2>{copy['your_feedback_matters']}</h2>
+            <p>{copy['if_you_have_visited_the_clinic']}</p>
+            <div className="review-feedback-note">
+              <strong>Need help with your treatment?</strong>
+              <p>{copy['for_questions_about_your_own_treatment']}</p>
+            </div>
+            <div className="button-row review-feedback-actions">
+              <a className="button" href={site.maps} target="_blank" rel="noreferrer">
+                Review us on Google <span aria-hidden="true">↗</span>
+              </a>
+              <a className="button secondary" href={site.phoneHref} data-event="phone_click">
+                Call {site.phone}
+              </a>
+            </div>
+          </div>
+          <figure className="review-feedback-media">
+            <Image src={brand.images.reception.src} alt={brand.images.reception.alt} fill sizes="(max-width: 900px) 100vw, 46vw" />
+            <figcaption><span>Visit META DENTAL</span>Panaiyur · ECR · Chennai</figcaption>
+          </figure>
         </div>
       </section>
       <CTA />
