@@ -2396,6 +2396,67 @@ footer {
   padding-top: 64px;
   padding-bottom: 64px;
 }
+.results-guidance-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  align-items: center;
+  gap: clamp(40px, 6vw, 82px);
+  max-width: 1100px;
+}
+.results-guidance-media {
+  position: relative;
+  min-height: 430px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--border);
+}
+.results-guidance-media img {
+  object-position: 48% 50%;
+}
+.results-guidance-media::after {
+  content: '';
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(transparent, rgba(0, 42, 39, 0.82));
+}
+.results-guidance-media figcaption {
+  position: absolute;
+  z-index: 1;
+  right: 28px;
+  bottom: 25px;
+  left: 28px;
+  max-width: 330px;
+  color: #fff;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+.results-guidance-media figcaption span {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.15em;
+}
+.results-guidance-copy > .eyebrow {
+  margin-bottom: 24px;
+}
+.results-guidance-item {
+  padding: 27px 0;
+  border-top: 1px solid var(--border);
+}
+.results-guidance-item:last-child {
+  padding-bottom: 0;
+}
+.results-guidance-item h2 {
+  margin-bottom: 14px;
+  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+}
+.results-guidance-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
 .result-case {
   display: flex;
   flex-direction: column;
@@ -2465,6 +2526,13 @@ footer {
   .results-grid {
     grid-template-columns: 1fr 1fr;
   }
+  .results-guidance-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .results-guidance-media {
+    min-height: 390px;
+  }
 }
 @media (max-width: 600px) {
   .results-section,
@@ -2478,6 +2546,14 @@ footer {
   .result-pair figure > div,
   .result-single figure > div {
     height: 160px;
+  }
+  .results-guidance-media {
+    min-height: 320px;
+  }
+  .results-guidance-media figcaption {
+    right: 20px;
+    bottom: 18px;
+    left: 20px;
   }
   .footer-brand img {
     width: 52px;

@@ -3,6 +3,7 @@ import { resultCases } from '@/data/results';
 import { interfaceCopy } from '@/config/copy';
 const copy = interfaceCopy.app_results_page;
 import { seo } from '@/lib/seo';
+import { assetPath } from '@/lib/paths';
 import { PageIntro, Breadcrumbs, CTA } from '@/components/ui';
 export const metadata = seo(
   'Clinical Case Gallery',
@@ -52,11 +53,30 @@ export default function Page() {
         </div>
       </section>
       <section className="section muted-section results-guidance">
-        <div className="container narrow prose">
-          <h2>{copy['look_beyond_a_beforeandafter_photograph']}</h2>
-          <p>{copy['when_discussing_a_treatment_ask_what']}</p>
-          <h2>{copy['your_consultation_is_personal']}</h2>
-          <p>{copy['bring_your_questions_about_appearance_function']}</p>
+        <div className="container results-guidance-grid">
+          <figure className="results-guidance-media">
+            <Image
+              src={assetPath('/images/gallery/dental-consultation.jpg')}
+              alt="META DENTAL clinician providing chairside care in the Panaiyur clinic"
+              fill
+              sizes="(max-width: 700px) 90vw, 520px"
+            />
+            <figcaption>
+              <span>CARE WITH CONTEXT</span>
+              Clinical photographs support a conversation with your dentist.
+            </figcaption>
+          </figure>
+          <div className="results-guidance-copy">
+            <p className="eyebrow">UNDERSTANDING YOUR CARE</p>
+            <div className="results-guidance-item">
+              <h2>{copy['look_beyond_a_beforeandafter_photograph']}</h2>
+              <p>{copy['when_discussing_a_treatment_ask_what']}</p>
+            </div>
+            <div className="results-guidance-item">
+              <h2>{copy['your_consultation_is_personal']}</h2>
+              <p>{copy['bring_your_questions_about_appearance_function']}</p>
+            </div>
+          </div>
         </div>
       </section>
       <CTA />
