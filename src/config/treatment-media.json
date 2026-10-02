@@ -1,0 +1,75 @@
+{
+  "collections": [
+    {
+      "id": "implant-systems",
+      "category": "Dental implants",
+      "eyebrow": "Implant systems",
+      "title": "Explore implant systems and components",
+      "introduction": "Implant treatment combines the implant body, connecting components and the final restoration. The system used for an individual patient is selected after clinical assessment and treatment planning.",
+      "visible": true,
+      "items": [
+        {
+          "id": "implant-animation",
+          "type": "video",
+          "src": "/media/treatment-systems/implant-animation.mp4",
+          "poster": "/media/treatment-systems/implant-animation-poster.webp",
+          "brand": "Implant education",
+          "title": "A closer look at implant design",
+          "description": "A short rotating view showing the external shape and connection of a dental implant.",
+          "alt": "Three-dimensional rotating animation of a dental implant",
+          "featured": true,
+          "visible": true,
+          "order": 1
+        },
+        {
+          "id": "dentium-implant",
+          "type": "image",
+          "src": "/media/treatment-systems/dentium-implant.webp",
+          "brand": "Dentium",
+          "title": "Dentium implant system",
+          "description": "An illustrated view of Dentium implant components.",
+          "alt": "Dentium implant system and restorative components",
+          "featured": false,
+          "visible": true,
+          "order": 2
+        },
+        {
+          "id": "osstem-implant",
+          "type": "image",
+          "src": "/media/treatment-systems/osstem-implant.webp",
+          "brand": "Osstem",
+          "title": "Osstem implant system",
+          "description": "An illustrated view of Osstem implant and crown components.",
+          "alt": "Osstem implant system with implant bodies and crown components",
+          "featured": false,
+          "visible": true,
+          "order": 3
+        },
+        {
+          "id": "straumann-implant",
+          "type": "image",
+          "src": "/media/treatment-systems/straumann-implant.webp",
+          "brand": "Straumann",
+          "title": "Straumann implant system",
+          "description": "An illustrated overview of Straumann implant components.",
+          "alt": "Straumann implant system and restorative components",
+          "featured": false,
+          "visible": true,
+          "order": 4
+        },
+        {
+          "id": "implant-system-overview",
+          "type": "image",
+          "src": "/images/gallery/implant-systems.webp",
+          "brand": "System overview",
+          "title": "Established implant systems",
+          "description": "A visual overview of several established dental implant systems.",
+          "alt": "Overview of established dental implant systems and components",
+          "featured": false,
+          "visible": true,
+          "order": 5
+        }
+      ]
+    }
+  ]
+}

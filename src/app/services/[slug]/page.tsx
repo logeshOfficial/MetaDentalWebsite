@@ -7,11 +7,11 @@ import { services, isServiceApproved } from '@/data/services';
 import { doctors } from '@/data/doctors';
 import { seo } from '@/lib/seo';
 import { absolute } from '@/lib/site';
-import { assetPath } from '@/lib/paths';
 import { JsonLd } from '@/components/json-ld';
 import { brand } from '@/config/brand';
 import { PageIntro, Breadcrumbs, VisitCard, FAQ, CTA } from '@/components/ui';
 import { ServiceCards } from '@/components/content-cards';
+import { TreatmentMediaLibrary } from '@/components/treatment-media-library';
 export const dynamicParams = false;
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -76,29 +76,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
               </figure>
             )}
             {s.slug === 'dental-implants' && (
-              <section className="implant-library" aria-labelledby="implant-library-title">
-                <p className="eyebrow">Implant library</p>
-                <h2 id="implant-library-title">Understanding implant systems</h2>
-                <p>
-                  Dental implants include the implant body, connecting components and the final
-                  restoration. Systems can differ in design and clinical application. Your dentist
-                  will recommend an appropriate option only after assessing your oral health,
-                  available bone and treatment needs.
-                </p>
-                <figure className="clinical-care-image">
-                  <Image
-                    src={assetPath('/images/gallery/implant-systems.webp')}
-                    alt="Illustrated overview of established dental implant systems and components"
-                    width={1600}
-                    height={840}
-                  />
-                  <figcaption>
-                    Examples of established implant systems. Displayed brands do not determine
-                    suitability; the treatment plan and components are confirmed after an
-                    individual clinical assessment.
-                  </figcaption>
-                </figure>
-              </section>
+              <TreatmentMediaLibrary collectionId="implant-systems" />
             )}
             <div className="doctor-callout">
               {doctor && (

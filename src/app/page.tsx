@@ -114,7 +114,7 @@ export default function Home() {
           </div>
           <Link
             className="implant-home-image"
-            href="/services/dental-implants/#implant-library-title"
+            href="/services/dental-implants/#implant-systems-heading"
             aria-label="Open the META DENTAL implant systems library"
           >
             <Image

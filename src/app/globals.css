@@ -999,19 +999,112 @@ footer {
   color: var(--on-primary);
   text-decoration: none;
 }
-.implant-library {
+.implant-library,
+.technology-library {
   margin-top: 48px;
   padding-top: 38px;
   border-top: 1px solid var(--border);
 }
-.implant-library .eyebrow {
+.implant-library .eyebrow,
+.technology-library > .eyebrow {
   margin-bottom: 10px;
 }
-.implant-library h2 {
+.implant-library h2,
+.technology-library > h2 {
   margin-top: 0;
 }
 .implant-library .clinical-care-image {
   margin-top: 28px;
+}
+.technology-featured {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(220px, 0.55fr);
+  gap: 0;
+  margin: 34px 0 22px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.technology-featured-media {
+  min-width: 0;
+  background: #171717;
+}
+.technology-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 330px;
+  background: #171717;
+  object-fit: contain;
+}
+.technology-featured > div:last-child {
+  align-self: center;
+  padding: 30px;
+}
+.technology-featured span,
+.technology-card-copy > span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--primary);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.technology-featured h3,
+.technology-card h3 {
+  margin-bottom: 10px;
+}
+.technology-featured p,
+.technology-card p {
+  margin: 0;
+  font-size: 0.88rem;
+}
+.technology-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.technology-card {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--background);
+}
+.technology-card-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--surface);
+}
+.technology-card-media img {
+  object-fit: contain;
+}
+.technology-card-copy {
+  padding: 22px;
+}
+.technology-disclaimer {
+  margin-top: 24px;
+  padding: 16px 18px;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  font-size: 0.78rem;
+}
+@media (max-width: 800px) {
+  .technology-featured {
+    grid-template-columns: 1fr;
+  }
+  .technology-featured > div:last-child {
+    padding: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .technology-card-grid {
+    grid-template-columns: 1fr;
+  }
+  .technology-video {
+    min-height: 210px;
+  }
 }
 .visit-card {
   background: var(--surface);
