@@ -10,7 +10,7 @@ import { absolute } from '@/lib/site';
 import { JsonLd } from '@/components/json-ld';
 import { brand } from '@/config/brand';
 import { PageIntro, Breadcrumbs, VisitCard, FAQ, CTA } from '@/components/ui';
-import { ServiceCards } from '@/components/content-cards';
+import { DoctorCredentialMarks, ServiceCards } from '@/components/content-cards';
 import { TreatmentMediaLibrary } from '@/components/treatment-media-library';
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -94,6 +94,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                   <Link className="text-link" href={'/doctors/' + doctor.slug + '/'}>
                     {doctor.name}
                   </Link>
+                  <DoctorCredentialMarks credentials={doctor.credentials} />
                   <p>{doctor.qualification}</p>
                 </>
               ) : (

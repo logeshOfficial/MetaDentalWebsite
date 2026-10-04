@@ -56,12 +56,12 @@ export const services: Service[] = [
   },
   {
     slug: 'invisible-aligners',
-    name: 'Invisible aligners',
+    name: 'Invisalign & clear aligners',
     category: 'Align & balance',
     headline: 'A clearer path to your smile.',
-    summary: 'Discuss clear aligners, including Invisalign, with our orthodontist in ECR, Chennai.',
+    summary: 'Discuss Invisalign and clear aligner treatment with Dr. Amrin Rizwana, an Invisalign Certified Provider in ECR, Chennai.',
     overview:
-      'Clear aligners are removable trays used in a planned sequence to move teeth. They are one option within orthodontic care rather than a suitable choice for every bite.',
+      'Invisalign and other clear aligners use removable trays in a planned sequence to move teeth. Dr. Amrin Rizwana is an Invisalign Certified Provider and will assess whether aligners are appropriate for your teeth, gums and bite.',
     suitability:
       'Adults and younger patients considering discreet alignment can discuss suitability. The condition of your teeth, gums and bite matters more than appearance alone.',
     process:

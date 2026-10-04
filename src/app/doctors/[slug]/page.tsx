@@ -8,7 +8,7 @@ import { seo } from '@/lib/seo';
 import { absolute } from '@/lib/site';
 import { Breadcrumbs, CTA } from '@/components/ui';
 import { BookButton } from '@/components/site-shell';
-import { ServiceCards } from '@/components/content-cards';
+import { DoctorCredentialMarks, ServiceCards } from '@/components/content-cards';
 import { JsonLd } from '@/components/json-ld';
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -39,6 +39,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           <div>
             <p className="eyebrow">{d.role}</p>
             <h1>{d.name}</h1>
+            <DoctorCredentialMarks credentials={d.credentials} />
             <p className="lead">{d.intro}</p>
             <p>{d.bio}</p>
             <h2>{copy['qualifications_education']}</h2>
@@ -78,7 +79,18 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           url: absolute('/doctors/' + slug + '/'),
           worksFor: { '@id': absolute('/#clinic') },
           alumniOf: { '@type': 'EducationalOrganization', name: d.education },
-          hasCredential: { '@type': 'EducationalOccupationalCredential', name: d.qualification },
+          hasCredential: [
+            { '@type': 'EducationalOccupationalCredential', name: d.qualification },
+            ...d.credentials.map((credential) => ({
+              '@type': 'EducationalOccupationalCredential',
+              name: credential.name,
+              recognizedBy: {
+                '@type': 'Organization',
+                name: credential.issuer,
+                url: credential.website,
+              },
+            })),
+          ],
         }}
       />
     </>
