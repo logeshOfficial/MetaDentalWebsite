@@ -3,13 +3,13 @@ import { assetPath } from '@/lib/paths';
 export const doctors = [
   {
     slug: 'dr-imran',
-    name: 'Dr. Mohammed Imran Z.',
+    name: 'Dr. Mohammed Imran Z',
     role: 'Prosthodontist & Implant Dentist',
     qualification: 'Dedicated Prosthodontist trained at Govt. Dental College & Hospital, Patiala. He specializes in crown & bridge work, veneers, laminates, implant-supported restorations, maxillofacial prosthetics, and full mouth rehabilitation in complex cases.',
     education: 'Government Dental College & Hospital, Patiala',
     image: assetPath('/images/dr-imran.jpg'),
     intro: 'A considered approach to restoring your smile.',
-    bio: 'Dr. Mohammed Imran Z. is a member of the Indian Dental Association (IDA) and focuses on rebuilding teeth and restoring oral function. His areas of practice include implant restorations, crowns, bridges and full-mouth rehabilitation.',
+    bio: 'Dr. Mohammed Imran Z is a member of the Indian Dental Association (IDA) and focuses on rebuilding teeth and restoring oral function. His areas of practice include implant restorations, crowns, bridges and full-mouth rehabilitation.',
     credentials: [
       {
         name: 'Member, Indian Dental Association',
