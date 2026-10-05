@@ -12,6 +12,7 @@ import { brand } from '@/config/brand';
 import { PageIntro, Breadcrumbs, VisitCard, FAQ, CTA } from '@/components/ui';
 import { DoctorCredentialMarks, ServiceCards } from '@/components/content-cards';
 import { TreatmentMediaLibrary } from '@/components/treatment-media-library';
+import { OrthodonticOptionsGallery } from '@/components/orthodontic-options-gallery';
 export const dynamicParams = false;
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -78,6 +79,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             {s.slug === 'dental-implants' && (
               <TreatmentMediaLibrary collectionId="implant-systems" />
             )}
+            {s.slug === 'braces-orthodontics' && <OrthodonticOptionsGallery />}
             <div className="doctor-callout">
               {doctor && (
                 <Image
