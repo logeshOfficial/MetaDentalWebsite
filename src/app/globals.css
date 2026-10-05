@@ -1351,6 +1351,7 @@ footer {
 }
 .zirconia-gallery-image {
   position: relative;
+  display: block;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background: #e8eeec;
