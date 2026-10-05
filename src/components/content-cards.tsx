@@ -44,7 +44,7 @@ export function ServiceCards({ items = services }: { items?: Service[] }) {
         };
         return (
           <Link className="service-card" href={'/services/' + s.slug + '/'} key={s.slug}>
-            <span className="service-card-media">
+            <span className={`service-card-media service-card-media-${s.slug}`}>
               <Image
                 src={assetPath(media.src)}
                 alt={media.alt}

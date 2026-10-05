@@ -608,6 +608,13 @@ address {
   inset: 0;
   background: linear-gradient(transparent 25%, rgba(4, 34, 30, 0.9));
 }
+.service-card-media-invisible-aligners::after {
+  background: linear-gradient(rgba(4, 34, 30, 0.78), transparent 58%);
+}
+.service-card-media-invisible-aligners .service-card-overlay {
+  top: 22px;
+  bottom: auto;
+}
 .service-card-overlay {
   position: absolute;
   z-index: 1;
