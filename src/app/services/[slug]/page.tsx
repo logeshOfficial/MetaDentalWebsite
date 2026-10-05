@@ -15,6 +15,7 @@ import { DoctorCredentialMarks, ServiceCards } from '@/components/content-cards'
 import { TreatmentMediaLibrary } from '@/components/treatment-media-library';
 import { OrthodonticOptionsGallery } from '@/components/orthodontic-options-gallery';
 import { ZirconiaCrownsGallery } from '@/components/zirconia-crowns-gallery';
+import { ExpandableImage } from '@/components/expandable-image';
 export const dynamicParams = false;
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -66,11 +67,12 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             <p>{s.aftercare}</p>
             {s.slug === 'dental-implants' && (
               <figure className="clinical-care-image">
-                <Image
+                <ExpandableImage
                   src={assetPath('/images/results/implant-placement-clinical-view.webp')}
                   alt="Clinical view of a dental implant component positioned at a healed tooth replacement site"
-                  width={1281}
-                  height={536}
+                  label="Dental implant placement — clinical view"
+                  sizes="(max-width: 900px) 100vw, 760px"
+                  aspectRatio="1281 / 536"
                 />
                 <figcaption>
                   Clinical view of an implant component at a healed tooth-replacement site. Image
@@ -80,11 +82,12 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             )}
             {s.slug === 'wisdom-tooth-extraction' && (
               <figure className="clinical-care-image">
-                <Image
+                <ExpandableImage
                   src={brand.images.clinicalCare.src}
                   alt={brand.images.clinicalCare.alt}
-                  width={1200}
-                  height={800}
+                  label="META DENTAL clinical treatment room"
+                  sizes="(max-width: 900px) 100vw, 760px"
+                  aspectRatio="3 / 2"
                 />
                 <figcaption>
                   Our clinical treatment room in Panaiyur. Any surgical procedure is recommended

@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import { orthodonticOptions } from '@/config/orthodontic-options';
+import { ExpandableImage } from '@/components/expandable-image';
 
 export function OrthodonticOptionsGallery() {
   return (
@@ -15,9 +15,14 @@ export function OrthodonticOptionsGallery() {
           <article className="orthodontic-option-card" key={option.id}>
             <div className={`orthodontic-option-media${option.images.length > 1 ? ' is-pair' : ''}`}>
               {option.images.map((image) => (
-                <span className="orthodontic-option-image" key={image.src}>
-                  <Image src={image.src} alt={image.alt} fill sizes="(max-width: 700px) 50vw, 270px" />
-                </span>
+                <ExpandableImage
+                  className="orthodontic-option-image"
+                  key={image.src}
+                  src={image.src}
+                  alt={image.alt}
+                  label={`${option.name}: ${image.alt}`}
+                  sizes="(max-width: 700px) 50vw, 270px"
+                />
               ))}
             </div>
             <div className="orthodontic-option-copy">

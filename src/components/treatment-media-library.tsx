@@ -1,9 +1,9 @@
 'use client';
 
-import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import treatmentMedia from '@/config/treatment-media.json';
 import { assetPath } from '@/lib/paths';
+import { ExpandableImage } from '@/components/expandable-image';
 
 type MediaItem = (typeof treatmentMedia.collections)[number]['items'][number];
 
@@ -64,11 +64,12 @@ export function TreatmentMediaLibrary({ collectionId }: { collectionId: string }
             {featured.type === 'video' ? (
               <TreatmentVideo item={featured} />
             ) : (
-              <Image
+              <ExpandableImage
                 src={assetPath(featured.src)}
                 alt={featured.alt}
-                fill
+                label={featured.title}
                 sizes="(max-width: 800px) 100vw, 760px"
+                objectFit="contain"
               />
             )}
           </div>
@@ -86,11 +87,12 @@ export function TreatmentMediaLibrary({ collectionId }: { collectionId: string }
               {item.type === 'video' ? (
                 <TreatmentVideo item={item} />
               ) : (
-                <Image
+                <ExpandableImage
                   src={assetPath(item.src)}
                   alt={item.alt}
-                  fill
+                  label={item.title}
                   sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 340px"
+                  objectFit="contain"
                 />
               )}
             </div>
