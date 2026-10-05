@@ -16,6 +16,16 @@ export function ZirconiaCrownsGallery() {
           <figure className="zirconia-gallery-card" key={photo.src}>
             <div className="zirconia-gallery-image">
               <Image
+                className="zirconia-gallery-backdrop"
+                src={photo.src}
+                alt=""
+                aria-hidden="true"
+                fill
+                sizes="(max-width: 600px) 100vw, 360px"
+                style={{ objectPosition: photo.position }}
+              />
+              <Image
+                className="zirconia-gallery-photo"
                 src={photo.src}
                 alt={photo.alt}
                 fill

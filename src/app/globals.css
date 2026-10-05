@@ -1307,13 +1307,19 @@ footer {
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: var(--surface);
+  background: #e8eeec;
 }
-.zirconia-gallery-image img {
+.zirconia-gallery-backdrop {
   object-fit: cover;
+  filter: blur(18px);
+  opacity: 0.24;
+  transform: scale(1.12);
+}
+.zirconia-gallery-photo {
+  object-fit: contain;
   transition: transform 260ms ease;
 }
-.zirconia-gallery-card:hover .zirconia-gallery-image img {
+.zirconia-gallery-card:hover .zirconia-gallery-photo {
   transform: scale(1.025);
 }
 .zirconia-gallery-card figcaption {
