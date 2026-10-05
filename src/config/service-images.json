@@ -5,13 +5,13 @@
     "position": "50% 50%"
   },
   "invisible-aligners": {
-    "src": "/images/services/invisible-aligners.webp",
-    "alt": "Aligned smile after clear aligner care",
+    "src": "/images/orthodontics/invisalign-case.webp",
+    "alt": "Invisalign clear aligners presented in their case",
     "position": "50% 50%"
   },
   "braces-orthodontics": {
-    "src": "/images/services/braces-orthodontics.webp",
-    "alt": "Dental alignment assessment photograph",
+    "src": "/images/orthodontics/metal-braces.webp",
+    "alt": "Metal braces used for orthodontic treatment",
     "position": "50% 50%"
   },
   "root-canal-treatment": {
