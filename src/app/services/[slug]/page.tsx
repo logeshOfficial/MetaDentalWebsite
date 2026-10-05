@@ -79,7 +79,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             {s.slug === 'dental-implants' && (
               <TreatmentMediaLibrary collectionId="implant-systems" />
             )}
-            {s.slug === 'braces-orthodontics' && <OrthodonticOptionsGallery />}
+            {(s.slug === 'braces-orthodontics' || s.slug === 'invisible-aligners') && (
+              <OrthodonticOptionsGallery />
+            )}
             <div className="doctor-callout">
               {doctor && (
                 <Image
