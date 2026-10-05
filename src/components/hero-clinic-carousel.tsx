@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { heroClinicInteriors } from '@/config/hero-clinic-interiors';
 
@@ -24,6 +25,13 @@ export function HeroClinicCarousel({ caption, note }: HeroClinicCarouselProps) {
 
     return () => window.clearInterval(timer);
   }, [paused]);
+
+  function move(direction: number) {
+    setActive(
+      (current) =>
+        (current + direction + heroClinicInteriors.length) % heroClinicInteriors.length,
+    );
+  }
 
   return (
     <div
@@ -56,6 +64,22 @@ export function HeroClinicCarousel({ caption, note }: HeroClinicCarouselProps) {
       <div className="image-index" aria-hidden="true">
         MD / {String(active + 1).padStart(2, '0')}
       </div>
+      <button
+        type="button"
+        className="hero-slide-arrow hero-slide-arrow-left"
+        onClick={() => move(-1)}
+        aria-label="Show previous clinic interior"
+      >
+        <ChevronLeft aria-hidden="true" />
+      </button>
+      <button
+        type="button"
+        className="hero-slide-arrow hero-slide-arrow-right"
+        onClick={() => move(1)}
+        aria-label="Show next clinic interior"
+      >
+        <ChevronRight aria-hidden="true" />
+      </button>
       <div className="hero-slide-dots" aria-label="Clinic interior slideshow controls">
         {heroClinicInteriors.map((photo, index) => (
           <button

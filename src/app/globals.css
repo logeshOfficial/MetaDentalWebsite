@@ -378,6 +378,39 @@ address {
 .hero-slide-dots button.is-active {
   background: var(--on-primary);
 }
+.hero-slide-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 50%;
+  color: var(--on-primary);
+  background: rgba(0, 52, 45, 0.68);
+  box-shadow: 0 8px 24px rgba(0, 29, 24, 0.18);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background 180ms ease, transform 180ms ease;
+}
+.hero-slide-arrow:hover,
+.hero-slide-arrow:focus-visible {
+  background: rgba(0, 87, 75, 0.94);
+  transform: translateY(-50%) scale(1.06);
+}
+.hero-slide-arrow-left {
+  left: 18px;
+}
+.hero-slide-arrow-right {
+  right: 18px;
+}
+.hero-slide-arrow svg {
+  width: 24px;
+  height: 24px;
+}
 .image-caption {
   position: absolute;
   bottom: 25px;
