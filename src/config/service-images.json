@@ -35,9 +35,9 @@
     "position": "50% 50%"
   },
   "crowns-bridges": {
-    "src": "/images/services/crowns-bridges.webp",
-    "alt": "META DENTAL clinician who provides restorative dental care",
-    "position": "50% 50%"
+    "src": "/images/services/crowns-bridges-treatment.png",
+    "alt": "Ceramic dental crown and bridge displayed on a restorative dental model",
+    "position": "50% 52%"
   },
   "dentures": {
     "src": "/images/services/dentures.webp",
@@ -85,9 +85,9 @@
     "position": "50% 50%"
   },
   "full-mouth-rehabilitation": {
-    "src": "/images/services/full-mouth-rehabilitation.webp",
-    "alt": "Full-smile restorative care",
-    "position": "50% 50%"
+    "src": "/images/services/full-mouth-rehabilitation-treatment.png",
+    "alt": "Dental study models and digital planning tools for comprehensive restorative care",
+    "position": "50% 52%"
   },
   "geriatric-dentistry": {
     "src": "/images/services/geriatric-dentistry.webp",
