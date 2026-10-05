@@ -7,6 +7,7 @@ import { services, isServiceApproved } from '@/data/services';
 import { doctors } from '@/data/doctors';
 import { seo } from '@/lib/seo';
 import { absolute } from '@/lib/site';
+import { assetPath } from '@/lib/paths';
 import { JsonLd } from '@/components/json-ld';
 import { brand } from '@/config/brand';
 import { PageIntro, Breadcrumbs, VisitCard, FAQ, CTA } from '@/components/ui';
@@ -63,7 +64,21 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             <p>{s.risks}</p>
             <h2>{copy['care_beyond_the_appointment']}</h2>
             <p>{s.aftercare}</p>
-            {(s.slug === 'dental-implants' || s.slug === 'wisdom-tooth-extraction') && (
+            {s.slug === 'dental-implants' && (
+              <figure className="clinical-care-image">
+                <Image
+                  src={assetPath('/images/results/implant-placement-clinical-view.webp')}
+                  alt="Clinical view of a dental implant component positioned at a healed tooth replacement site"
+                  width={1281}
+                  height={536}
+                />
+                <figcaption>
+                  Clinical view of an implant component at a healed tooth-replacement site. Image
+                  supplied and approved for website use by META DENTAL.
+                </figcaption>
+              </figure>
+            )}
+            {s.slug === 'wisdom-tooth-extraction' && (
               <figure className="clinical-care-image">
                 <Image
                   src={brand.images.clinicalCare.src}
