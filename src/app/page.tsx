@@ -3,7 +3,6 @@ const copy = interfaceCopy.app_page;
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight, MapPin, Clock, MessageCircle } from 'lucide-react';
-import { brand } from '@/config/brand';
 import { home } from '@/data/home';
 import { services } from '@/data/services';
 import { site } from '@/lib/site';
@@ -14,6 +13,7 @@ import { ServiceCards, DoctorCards } from '@/components/content-cards';
 import { FAQ, CTA } from '@/components/ui';
 import { GoogleReviews } from '@/components/google-reviews';
 import { ClinicGallery } from '@/components/clinic-gallery';
+import { HeroClinicCarousel } from '@/components/hero-clinic-carousel';
 export const metadata = seo(
   copy['dentist_in_ecr_chennai_meta_dental'],
   copy['meet_your_dentists_at_meta_dental'],
@@ -52,22 +52,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="hero-image">
-            <Image
-              src={brand.images.hero.src}
-              alt={brand.images.hero.alt}
-              fill
-              priority
-              sizes="(max-width: 800px) 100vw, 50vw"
-            />
-            <div className="image-caption">
-              <span>{home.heroCaption}</span>
-              <p>{home.heroNote}</p>
-            </div>
-            <div className="image-index" aria-hidden="true">
-              {copy['md_01']}
-            </div>
-          </div>
+          <HeroClinicCarousel caption={home.heroCaption} note={home.heroNote} />
         </div>
       </section>
       <section className="quick-info">

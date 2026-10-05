@@ -343,8 +343,13 @@ address {
   overflow: hidden;
   background: var(--border);
 }
-.hero-image > img {
-  object-position: center;
+.hero-slide {
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 520ms ease;
+}
+.hero-slide.is-active {
+  opacity: 1;
 }
 .hero-image:after {
   content: '';
@@ -352,6 +357,26 @@ address {
   inset: 50% 0 0;
   background: linear-gradient(transparent, rgba(0, 29, 24, 0.83));
   pointer-events: none;
+}
+.hero-slide-dots {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2;
+  display: flex;
+  gap: 7px;
+}
+.hero-slide-dots button {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
+  cursor: pointer;
+}
+.hero-slide-dots button.is-active {
+  background: var(--on-primary);
 }
 .image-caption {
   position: absolute;
