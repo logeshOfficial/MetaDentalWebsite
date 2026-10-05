@@ -1337,11 +1337,17 @@ footer {
   margin-top: 30px;
 }
 .zirconia-gallery-card {
+  width: 100%;
   overflow: hidden;
   margin: 0;
+  padding: 0;
   border: 1px solid var(--border);
   border-radius: 10px;
   background: var(--background);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 .zirconia-gallery-image {
   position: relative;
@@ -1362,7 +1368,27 @@ footer {
 .zirconia-gallery-card:hover .zirconia-gallery-photo {
   transform: scale(1.025);
 }
-.zirconia-gallery-card figcaption {
+.zirconia-gallery-card:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+}
+.zirconia-gallery-expand {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid #ffffff70;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(12, 50, 46, 0.62);
+  backdrop-filter: blur(8px);
+}
+.zirconia-gallery-caption {
+  display: block;
   padding: 14px 16px 16px;
   color: var(--primary);
   font-size: 0.78rem;
