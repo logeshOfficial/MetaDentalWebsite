@@ -44,6 +44,12 @@ export const clinicSchema = {
     },
   ],
   hasMap: site.maps,
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: site.phone,
+    contactType: 'appointments',
+    areaServed: 'IN-TN',
+  },
   sameAs: [site.maps, site.instagram],
   areaServed: [
     { '@type': 'Place', name: 'Panaiyur, Chennai' },

@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact/',
     '/book-appointment/',
     '/reviews/',
+    '/results/',
     '/locations/panaiyur/',
     ...doctors.map((d) => '/doctors/' + d.slug + '/'),
     ...services.filter(isServiceApproved).map((s) => '/services/' + s.slug + '/'),

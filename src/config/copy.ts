@@ -124,9 +124,9 @@ export const interfaceCopy = {
   },
   app_page: {
     '0': '0',
-    dentist_in_ecr_chennai_meta_dental: 'Dentist in ECR, Chennai — Panaiyur',
+    dentist_in_ecr_chennai_meta_dental: 'Dental Clinic in ECR, Chennai — META DENTAL Panaiyur',
     meet_your_dentists_at_meta_dental:
-      'Visit META DENTAL in Panaiyur on ECR, Chennai for dental consultations, implants, crowns, root canal care, aligners and family dentistry.',
+      'Visit META DENTAL, a dental clinic in Panaiyur on ECR, Chennai, for dental check-ups, implants, crowns, root canal care, braces, Invisalign and family dentistry.',
     explore_treatments: 'Explore treatments',
     have_a_question_before_you_visit: 'Have a question before you visit?',
     lets_talk_on_whatsapp: 'Let’s talk on WhatsApp',

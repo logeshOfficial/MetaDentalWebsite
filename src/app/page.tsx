@@ -14,6 +14,7 @@ import { FAQ, CTA } from '@/components/ui';
 import { GoogleReviews } from '@/components/google-reviews';
 import { ClinicGallery } from '@/components/clinic-gallery';
 import { HeroClinicCarousel } from '@/components/hero-clinic-carousel';
+import { JsonLd } from '@/components/json-ld';
 export const metadata = seo(
   copy['dentist_in_ecr_chennai_meta_dental'],
   copy['meet_your_dentists_at_meta_dental'],
@@ -219,6 +220,17 @@ export default function Home() {
         </div>
       </section>
       <CTA />
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: home.faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.q,
+            acceptedAnswer: { '@type': 'Answer', text: faq.a },
+          })),
+        }}
+      />
     </>
   );
 }
