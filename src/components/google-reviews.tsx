@@ -68,7 +68,7 @@ function GoogleG() {
 export function GoogleReviews() {
   const [feed, setFeed] = useState<ReviewFeed>({
     rating: 4.9,
-    count: 212,
+    count: 217,
     reviews: [...fallbackReviews],
   });
   const [page, setPage] = useState(0);

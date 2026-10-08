@@ -1,6 +1,6 @@
 # Live Google reviews setup
 
-The website is ready to display live Google Business Profile data. Until credentials are added, it safely shows the existing six review cards and the confirmed count of 212.
+The website is ready to display live Google Business Profile data. Until credentials are added, it safely shows the existing six review cards and the confirmed count of 217.
 
 ## Google account setup
 
