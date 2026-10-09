@@ -4,6 +4,7 @@ export const doctors = [
   {
     slug: 'dr-imran',
     name: 'Dr. Mohammed Imran Z',
+    qualificationTitle: 'M.D.S. (Prosthetics and Crown & Bridge dentistry)',
     role: 'Prosthodontist & Implant Dentist',
     qualification: 'Dedicated Prosthodontist trained at Govt. Dental College & Hospital, Patiala. He specializes in crown & bridge work, veneers, laminates, implant-supported restorations, maxillofacial prosthetics, and full mouth rehabilitation in complex cases.',
     education: 'Government Dental College & Hospital, Patiala',
@@ -37,6 +38,7 @@ export const doctors = [
   {
     slug: 'dr-amrin-rizwana',
     name: 'Dr. Amrin Rizwana',
+    qualificationTitle: 'M.D.S. (Orthodontics & Craniofacial Orthopaedics)',
     role: 'Orthodontist & Aligner Specialist',
     qualification: 'Highly accomplished orthodontist from Maulana Azad Institute of Dental Sciences, New Delhi. She is Invisalign & Graphy certified, proficient in aligner therapy, growth modification, and smile designing — blending science, technology, and artistry.',
     education: 'Maulana Azad Institute of Dental Sciences, New Delhi',

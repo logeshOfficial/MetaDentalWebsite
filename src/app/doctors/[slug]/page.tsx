@@ -39,6 +39,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           <div>
             <p className="eyebrow">{d.role}</p>
             <h1>{d.name}</h1>
+            <p className="doctor-qualification-title">{d.qualificationTitle}</p>
             <DoctorCredentialMarks credentials={d.credentials} />
             <p className="lead">{d.intro}</p>
             <p>{d.bio}</p>
@@ -80,7 +81,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           worksFor: { '@id': absolute('/#clinic') },
           alumniOf: { '@type': 'EducationalOrganization', name: d.education },
           hasCredential: [
-            { '@type': 'EducationalOccupationalCredential', name: d.qualification },
+            { '@type': 'EducationalOccupationalCredential', name: d.qualificationTitle },
             ...d.credentials.map((credential) => ({
               '@type': 'EducationalOccupationalCredential',
               name: credential.name,

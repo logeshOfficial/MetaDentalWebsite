@@ -83,6 +83,7 @@ export function DoctorCards() {
             <h3>
               <Link href={'/doctors/' + d.slug + '/'}>{d.name}</Link>
             </h3>
+            <p className="doctor-qualification-title">{d.qualificationTitle}</p>
             <DoctorCredentialMarks credentials={d.credentials} />
             <p>{d.qualification}</p>
             <Link className="text-link" href={'/doctors/' + d.slug + '/'}>

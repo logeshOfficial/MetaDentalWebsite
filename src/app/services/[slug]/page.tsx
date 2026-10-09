@@ -118,6 +118,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                   <Link className="text-link" href={'/doctors/' + doctor.slug + '/'}>
                     {doctor.name}
                   </Link>
+                  <span className="doctor-qualification-title doctor-specialist-qualification">
+                    {doctor.qualificationTitle}
+                  </span>
                   <DoctorCredentialMarks credentials={doctor.credentials} />
                   <p>{doctor.qualification}</p>
                 </>

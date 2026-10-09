@@ -2715,6 +2715,20 @@ footer {
   display: block;
   clear: both;
 }
+.doctor-qualification-title {
+  display: block;
+  margin: 4px 0 14px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.doctor-copy .doctor-qualification-title {
+  margin-top: -3px;
+}
+.doctor-specialist-qualification {
+  margin-top: 8px;
+}
 .clinical-care-image {
   margin: 34px 0;
 }
