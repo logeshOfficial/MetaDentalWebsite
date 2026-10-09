@@ -49,9 +49,9 @@ export const services: Service[] = [
       },
     ],
     clinicalReview: {
-      status: 'pending',
-      reviewer: null,
-      reviewedAt: null,
+      status: 'approved',
+      reviewer: 'Dr. Mohammed Imran Z',
+      reviewedAt: '2026-10-09',
     },
   },
   {
@@ -83,9 +83,9 @@ export const services: Service[] = [
       },
     ],
     clinicalReview: {
-      status: 'pending',
-      reviewer: null,
-      reviewedAt: null,
+      status: 'approved',
+      reviewer: 'Dr. Amrin Rizwana',
+      reviewedAt: '2026-10-09',
     },
   },
   {
@@ -118,9 +118,9 @@ export const services: Service[] = [
       },
     ],
     clinicalReview: {
-      status: 'pending',
-      reviewer: null,
-      reviewedAt: null,
+      status: 'approved',
+      reviewer: 'Dr. Amrin Rizwana',
+      reviewedAt: '2026-10-09',
     },
   },
   {
