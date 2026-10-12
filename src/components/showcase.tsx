@@ -135,7 +135,7 @@ export function ClinicGallery() {
 /* ─────────────────────────────────────────────
    REVIEW BADGE
    Single source of truth — update site.ts only.
-   { rating: 4.9, count: 200 }
+   site.reviews = { rating, count, verifiedAt }
    ───────────────────────────────────────────── */
 export function ReviewBadge({ size = 'normal' }: { size?: 'normal' | 'large' }) {
   const displayRating = site.reviews.rating ?? 4.9;

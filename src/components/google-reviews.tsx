@@ -107,8 +107,8 @@ function ReviewCard({ review, fading }: { review: Review; fading: boolean }) {
 
 export function GoogleReviews() {
   const [feed, setFeed] = useState<ReviewFeed>({
-    rating:  4.9,
-    count:   217,
+    rating:  site.reviews.rating  ?? 5,
+    count:   site.reviews.count   ?? 218,
     reviews: [...fallbackReviews],
   });
   const [offset, setOffset] = useState(0);   // start index into reviews array
@@ -185,7 +185,7 @@ export function GoogleReviews() {
           ))}
         </div>
 
-        {/* Page counter instead of 200+ dots */}
+        {/* Progress bar + counter */}
         {total > VISIBLE && (
           <div className="review-counter" aria-live="polite" aria-atomic="true">
             <span className="review-counter-bar">
@@ -195,7 +195,7 @@ export function GoogleReviews() {
               />
             </span>
             <span className="review-counter-label">
-              {offset + 1} – {Math.min(offset + VISIBLE, total)} of {total} reviews
+              {offset + 1} – {Math.min(offset + VISIBLE, total)} of {feed.count}+ reviews
             </span>
           </div>
         )}

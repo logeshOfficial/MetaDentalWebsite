@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { site } from '@/lib/site';
 
 /* ─────────────────────────────────────────────────────────────────────────
    Two fetch strategies, tried in order:
@@ -158,8 +159,8 @@ async function fetchPlaces(): Promise<FeedOut> {
   const place = (await res.json()) as PlaceResult;
 
   return {
-    rating:    place.rating          ?? 4.9,
-    count:     place.userRatingCount ?? 217,
+    rating:    place.rating          ?? site.reviews.rating ?? 5,
+    count:     place.userRatingCount ?? site.reviews.count  ?? 218,
     updatedAt: new Date().toISOString(),
     reviews: (place.reviews ?? [])
       .filter((r) => r.text?.text?.trim())

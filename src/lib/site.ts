@@ -31,7 +31,7 @@ export const site = {
   instagram: 'https://www.instagram.com/metadentalecr/',
   reviews: {
     rating: 5,
-    count: 217,
+    count: 218,
     verifiedAt: '2026-10',
   },
 };
