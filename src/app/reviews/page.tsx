@@ -51,7 +51,7 @@ export default function Page() {
               <p>{copy['for_questions_about_your_own_treatment']}</p>
             </div>
             <div className="button-row review-feedback-actions">
-              <a className="button" href={site.maps} target="_blank" rel="noreferrer">
+              <a className="button" href={site.reviewUrl} target="_blank" rel="noreferrer">
                 Review us on Google <span aria-hidden="true">↗</span>
               </a>
               <a className="button secondary" href={site.phoneHref} data-event="phone_click">
