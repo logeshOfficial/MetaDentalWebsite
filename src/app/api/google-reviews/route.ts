@@ -69,7 +69,10 @@ async function gbpAccessToken(): Promise<string> {
     }),
     cache: 'no-store',
   });
-  if (!res.ok) throw new Error('GBP auth failed');
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(`GBP auth failed: ${res.status} ${body}`);
+  }
   return ((await res.json()) as { access_token: string }).access_token;
 }
 
