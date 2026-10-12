@@ -132,35 +132,23 @@ type PlaceResult = {
 
 async function fetchPlaces(): Promise<FeedOut> {
   const key     = process.env.GOOGLE_PLACES_API_KEY!;
-  // Supports both ChIJ... Place ID and numeric CID (from maps?cid=...)
-  const placeId = process.env.GOOGLE_PLACE_ID!;
+  const placeId = process.env.GOOGLE_PLACE_ID!;  // ChIJ... format
   const fields  = 'rating,userRatingCount,reviews';
 
-  // Resolve CID → Place ID if a numeric CID was provided
-  let resolvedId = placeId;
-  if (/^\d+$/.test(placeId)) {
-    // CID provided — convert via Geocoding API
-    const geoRes = await fetch(
-      `https://maps.googleapis.com/maps/api/geocode/json?place_id=&cid=${placeId}&key=${key}`,
-      { next: { revalidate: 86400 } },
-    );
-    const geoJson = await geoRes.json() as { results?: { place_id: string }[] };
-    if (geoJson.results?.[0]?.place_id) {
-      resolvedId = geoJson.results[0].place_id;
-    }
-  }
-
   const res = await fetch(
-    `https://places.googleapis.com/v1/places/${resolvedId}`,
+    `https://places.googleapis.com/v1/places/${placeId}`,
     {
       headers: {
-        'X-Goog-Api-Key': key,
+        'X-Goog-Api-Key':  key,
         'X-Goog-FieldMask': fields,
       },
       next: { revalidate: 3600 },
     },
   );
-  if (!res.ok) throw new Error(`Places API failed: ${res.status}`);
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(`Places API ${res.status}: ${body}`);
+  }
   const place = (await res.json()) as PlaceResult;
 
   return {
@@ -170,12 +158,12 @@ async function fetchPlaces(): Promise<FeedOut> {
     reviews: (place.reviews ?? [])
       .filter((r) => r.text?.text?.trim())
       .map((r, i) => ({
-        id:    `place-${i}`,
-        name:  r.authorAttribution?.displayName || 'Google user',
-        photo: r.authorAttribution?.photoUri    || null,
+        id:     `place-${i}`,
+        name:   r.authorAttribution?.displayName || 'Google user',
+        photo:  r.authorAttribution?.photoUri    || null,
         rating: r.rating ?? 5,
-        text:  r.text!.text!.trim(),
-        date:  r.publishTime || null,
+        text:   r.text!.text!.trim(),
+        date:   r.publishTime || null,
       })),
   };
 }
