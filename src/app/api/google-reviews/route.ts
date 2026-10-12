@@ -91,7 +91,10 @@ async function fetchGBP(): Promise<FeedOut> {
       `https://mybusiness.googleapis.com/v4/${parent}/reviews?${q}`,
       { headers: { Authorization: `Bearer ${token}` }, cache: 'no-store' },
     );
-    if (!res.ok) throw new Error(`GBP reviews failed: ${res.status}`);
+    if (!res.ok) {
+      const body = await res.text();
+      throw new Error(`GBP reviews failed: ${res.status} ${body}`);
+    }
     const page = (await res.json()) as GBPPage;
     raw.push(...(page.reviews ?? []));
     rating         = page.averageRating    ?? rating;

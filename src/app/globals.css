@@ -2296,13 +2296,14 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
-  /* Cards are equal-height — no card grows beyond this */
+  align-items: start; /* each card natural height, no stretching */
 }
 
 /* ── Individual card ── */
 .review-card {
   display: flex;
   flex-direction: column;
+  min-height: 180px;   /* short reviews don't look too tiny */
   padding: 22px;
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -2380,26 +2381,50 @@ footer {
   flex-shrink: 0;
 }
 .reviewer-info   { flex: 1; min-width: 0; }
-.reviewer-name   { display: block; font-size: 0.85rem; font-weight: 700; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.reviewer-name   {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.3;
+  /* Wrap long names instead of cutting them off */
+  white-space: normal;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
 .reviewer-location { display: block; font-size: 0.7rem; color: var(--muted); line-height: 1.3; }
 .google-g        { margin-left: auto; flex-shrink: 0; }
 
 .review-card .star-row { color: #f59e0b; flex-shrink: 0; margin-bottom: 10px; }
 
-/* ── Dot indicators ── */
-.review-dots {
+/* ── Progress bar + counter (replaces 200+ dots) ── */
+.review-counter {
+  margin: 18px 0 4px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   gap: 6px;
-  margin: 16px 0 4px;
 }
-.review-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
+.review-counter-bar {
+  display: block;
+  height: 3px;
   background: var(--border);
-  transition: background 0.2s, transform 0.2s;
+  border-radius: 2px;
+  overflow: hidden;
 }
-.review-dot--active { background: var(--primary); transform: scale(1.35); }
+.review-counter-fill {
+  display: block;
+  height: 100%;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+  min-width: 4px;
+}
+.review-counter-label {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-align: right;
+}
 
 /* ── Controls row ── */
 .review-controls {

@@ -150,9 +150,6 @@ export function GoogleReviews() {
     feed.reviews[(offset + i) % total],
   );
 
-  /* dot indicators */
-  const dots = total > VISIBLE ? Array.from({ length: total }) : [];
-
   return (
     <div className="review-section-inner">
       {/* ── Left: heading + badge ── */}
@@ -188,15 +185,18 @@ export function GoogleReviews() {
           ))}
         </div>
 
-        {/* Dot indicators */}
-        {dots.length > 0 && (
-          <div className="review-dots" aria-hidden="true">
-            {dots.map((_, i) => (
+        {/* Page counter instead of 200+ dots */}
+        {total > VISIBLE && (
+          <div className="review-counter" aria-live="polite" aria-atomic="true">
+            <span className="review-counter-bar">
               <span
-                key={i}
-                className={`review-dot${i === offset % total ? ' review-dot--active' : ''}`}
+                className="review-counter-fill"
+                style={{ width: `${((offset + 1) / total) * 100}%` }}
               />
-            ))}
+            </span>
+            <span className="review-counter-label">
+              {offset + 1} – {Math.min(offset + VISIBLE, total)} of {total} reviews
+            </span>
           </div>
         )}
 
