@@ -212,9 +212,11 @@ export async function GET() {
         });
       } catch { /* fall through */ }
     }
-    console.error('[google-reviews]', err);
+    const message = err instanceof Error ? err.message : String(err);
+    console.error('[google-reviews]', message);
+    // Return the error detail so we can debug
     return NextResponse.json(
-      { error: 'Reviews temporarily unavailable' },
+      { error: 'Reviews temporarily unavailable', detail: message },
       { status: 502 },
     );
   }
