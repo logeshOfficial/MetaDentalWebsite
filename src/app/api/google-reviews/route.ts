@@ -132,14 +132,14 @@ type PlaceResult = {
 
 async function fetchPlaces(): Promise<FeedOut> {
   const key     = process.env.GOOGLE_PLACES_API_KEY!;
-  const placeId = process.env.GOOGLE_PLACE_ID!;  // ChIJ... format
+  const placeId = process.env.GOOGLE_PLACE_ID!;
   const fields  = 'rating,userRatingCount,reviews';
 
   const res = await fetch(
-    `https://places.googleapis.com/v1/places/${placeId}`,
+    `https://places.googleapis.com/v1/places/${placeId}?reviews_sort=newest`,
     {
       headers: {
-        'X-Goog-Api-Key':  key,
+        'X-Goog-Api-Key':   key,
         'X-Goog-FieldMask': fields,
       },
       next: { revalidate: 3600 },
@@ -171,7 +171,11 @@ async function fetchPlaces(): Promise<FeedOut> {
 /* ═══════════════════════════════════════════════════════════════════════════
    ROUTE HANDLER — tries GBP first, falls back to Places
    ═══════════════════════════════════════════════════════════════════════════ */
-export async function GET() {
+export async function GET(request: Request) {
+  // Allow cache-busting via ?nocache=1 for debugging
+  const url = new URL(request.url);
+  if (url.searchParams.get('nocache') === '1') cache = undefined;
+
   // Return cached response if still fresh
   if (cache && cache.expires > Date.now()) {
     return NextResponse.json(cache.value, {
