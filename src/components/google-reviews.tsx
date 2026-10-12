@@ -59,6 +59,8 @@ function GoogleG() {
 }
 
 function ReviewCard({ review, fading }: { review: Review; fading: boolean }) {
+  const [expanded, setExpanded] = useState(false);
+
   const dateLabel = review.date
     ? new Intl.DateTimeFormat('en-IN', { month: 'short', year: 'numeric' }).format(new Date(review.date))
     : review.location ?? '';
@@ -81,9 +83,24 @@ function ReviewCard({ review, fading }: { review: Review; fading: boolean }) {
         </div>
         <GoogleG />
       </div>
+
       <StarRow rating={review.rating} />
-      {/* Text is clamped to 5 lines — equal height for all cards */}
-      <p className="review-text">&ldquo;{review.text}&rdquo;</p>
+
+      {/* Text: clamped by default, fully visible when expanded */}
+      <p className={`review-text${expanded ? ' review-text--expanded' : ''}`}>
+        &ldquo;{review.text}&rdquo;
+      </p>
+
+      {/* Only show toggle if text is long enough to be clamped */}
+      {review.text.length > 180 && (
+        <button
+          className="review-read-more"
+          onClick={() => setExpanded((v) => !v)}
+          aria-expanded={expanded}
+        >
+          {expanded ? 'Show less ↑' : 'Read more ↓'}
+        </button>
+      )}
     </article>
   );
 }

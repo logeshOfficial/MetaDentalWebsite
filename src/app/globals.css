@@ -2303,16 +2303,54 @@ footer {
 .review-card {
   display: flex;
   flex-direction: column;
-  height: 280px;          /* fixed height — all cards same size */
   padding: 22px;
   border: 1px solid var(--border);
   border-radius: 10px;
   background: var(--background);
   transition: opacity 0.28s ease, box-shadow 0.2s, border-color 0.2s;
-  overflow: hidden;       /* clips overflow */
 }
 .review-card:hover  { border-color: var(--primary); box-shadow: 0 6px 24px #153d390d; }
-.review-card--out   { opacity: 0; }   /* fade during swap */
+.review-card--out   { opacity: 0; }
+
+/* ── Review text — clamped to 4 lines by default ── */
+.review-text {
+  font-size: 0.84rem;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0 0 10px;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+/* When expanded — show all text */
+.review-text--expanded {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+/* ── Read more / Show less toggle ── */
+.review-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.15s;
+  flex-shrink: 0;
+}
+.review-read-more:hover { text-decoration-color: var(--primary); }
 
 .review-card-top {
   display: flex;
@@ -2347,20 +2385,6 @@ footer {
 .google-g        { margin-left: auto; flex-shrink: 0; }
 
 .review-card .star-row { color: #f59e0b; flex-shrink: 0; margin-bottom: 10px; }
-
-/* ── Review text — clamped to 5 lines ── */
-.review-text {
-  font-size: 0.84rem;
-  line-height: 1.7;
-  color: var(--muted);
-  margin: 0;
-  flex: 1;
-  /* Clamp long reviews to 5 lines with "..." */
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
 
 /* ── Dot indicators ── */
 .review-dots {
@@ -2411,8 +2435,7 @@ footer {
 }
 @media (max-width: 700px) {
   .review-cards-scroll { grid-template-columns: 1fr; }
-  .review-card         { height: auto; min-height: 220px; }
-  .review-text         { -webkit-line-clamp: 4; }
+  .review-text         { -webkit-line-clamp: 3; }
 }
 @media (max-width: 500px) {
   .review-controls { flex-direction: column; align-items: flex-start; }
@@ -2478,13 +2501,6 @@ footer {
   display: flex;
   gap: 2px;
   color: #f59e0b;
-}
-.review-text {
-  font-size: 0.86rem;
-  line-height: 1.75;
-  color: var(--muted);
-  margin: 0;
-  flex: 1;
 }
 .review-cta-row,
 .review-controls {
