@@ -5,12 +5,14 @@ const copy = interfaceCopy.app_reviews_page;
 import { site } from '@/lib/site';
 import { seo } from '@/lib/seo';
 import { PageIntro, Breadcrumbs, CTA } from '@/components/ui';
-import { ReviewCards } from '@/components/showcase';
+import { GoogleReviews } from '@/components/google-reviews';
+
 export const metadata = seo(
   copy['patient_reviews_experiences'],
   copy['explore_meta_dental_patient_experiences_on'],
   '/reviews/',
 );
+
 export default function Page() {
   return (
     <>
@@ -28,20 +30,16 @@ export default function Page() {
           </a>
         </div>
       </PageIntro>
-      <section className="section">
+
+      {/* GoogleReviews fetches live count + rating + reviews from /api/google-reviews
+          Falls back to home.ts data if API not configured.
+          Auto-rotates every 5 seconds, pauses on hover/focus. */}
+      <section className="section" id="reviews">
         <div className="container">
-          <div className="review-rating-badge" style={{ marginBottom: '40px' }}>
-            <span className="badge-score">4.9</span>
-            <div className="badge-stars">
-              <span className="star-row" aria-label="5 stars">
-                {'★★★★★'}
-              </span>
-              <span className="badge-count">200+ Google Reviews</span>
-            </div>
-          </div>
-          <ReviewCards />
+          <GoogleReviews />
         </div>
       </section>
+
       <section className="section muted-section review-feedback-section">
         <div className="container review-feedback-grid">
           <div className="review-feedback-copy">
@@ -62,8 +60,15 @@ export default function Page() {
             </div>
           </div>
           <figure className="review-feedback-media">
-            <Image src={brand.images.reception.src} alt={brand.images.reception.alt} fill sizes="(max-width: 900px) 100vw, 46vw" />
-            <figcaption><span>Visit META DENTAL</span>Panaiyur · ECR · Chennai</figcaption>
+            <Image
+              src={brand.images.reception.src}
+              alt={brand.images.reception.alt}
+              fill
+              sizes="(max-width: 900px) 100vw, 46vw"
+            />
+            <figcaption>
+              <span>Visit META DENTAL</span>Panaiyur · ECR · Chennai
+            </figcaption>
           </figure>
         </div>
       </section>

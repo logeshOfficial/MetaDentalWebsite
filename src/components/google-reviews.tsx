@@ -16,7 +16,7 @@ type Review = {
 };
 type ReviewFeed = { rating: number; count: number; reviews: Review[] };
 const PAGE_SIZE = 6;
-const ROTATION_MS = 12000;
+const ROTATION_MS = 5000;
 const subscribeToReducedMotion = (callback: () => void) => {
   const media = window.matchMedia('(prefers-reduced-motion: reduce)');
   media.addEventListener('change', callback);

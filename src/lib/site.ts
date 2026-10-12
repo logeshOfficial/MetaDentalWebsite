@@ -29,9 +29,9 @@ export const site = {
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.2944201399837!2d80.24270407454533!3d12.888780216689725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525b936b74c761%3A0xbec186a0c7efa480!2sMETA%20DENTAL!5e0!3m2!1sen!2sin!4v1790751861477!5m2!1sen!2sin',
   instagram: 'https://www.instagram.com/metadentalecr/',
   reviews: {
-    rating: null as number | null,
-    count: null as number | null,
-    verifiedAt: null as string | null,
+    rating: 4.9,
+    count: 200,
+    verifiedAt: '2025-10',
   },
 };
 export const allowIndexing = process.env.ENABLE_INDEXING === 'true';
