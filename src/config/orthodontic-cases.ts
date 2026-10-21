@@ -7,23 +7,27 @@ export const orthodonticCases = [
     label: 'Case 01',
     src: assetPath('/images/orthodontic-cases/case-01.png'),
     alt: 'Intraoral clinical photographs from orthodontic patient case 01',
+    stages: ['Before', 'After'],
   },
   {
     id: 'case-02',
     label: 'Case 02',
     src: assetPath('/images/orthodontic-cases/case-02.png'),
     alt: 'Intraoral clinical photographs from orthodontic patient case 02',
+    stages: ['Before', 'After'],
   },
   {
     id: 'case-03',
     label: 'Case 03',
     src: assetPath('/images/orthodontic-cases/case-03.png'),
     alt: 'Intraoral clinical photographs from orthodontic patient case 03',
+    stages: ['Before', 'After'],
   },
   {
     id: 'case-04',
     label: 'Case 04',
     src: assetPath('/images/orthodontic-cases/case-04.png'),
     alt: 'Intraoral clinical photographs from orthodontic patient case 04',
+    stages: ['Before', 'During treatment', 'After'],
   },
 ] as const;

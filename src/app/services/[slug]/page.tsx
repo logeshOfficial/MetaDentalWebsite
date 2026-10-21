@@ -14,7 +14,6 @@ import { PageIntro, Breadcrumbs, VisitCard, FAQ, CTA } from '@/components/ui';
 import { DoctorCredentialMarks, ServiceCards } from '@/components/content-cards';
 import { TreatmentMediaLibrary } from '@/components/treatment-media-library';
 import { OrthodonticOptionsGallery } from '@/components/orthodontic-options-gallery';
-import { OrthodonticCasesGallery } from '@/components/orthodontic-cases-gallery';
 import { ZirconiaCrownsGallery } from '@/components/zirconia-crowns-gallery';
 import { ExpandableImage } from '@/components/expandable-image';
 export const dynamicParams = false;
@@ -99,10 +98,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             {s.slug === 'dental-implants' && (
               <TreatmentMediaLibrary collectionId="implant-systems" />
             )}
-            {(s.slug === 'braces-orthodontics' || s.slug === 'invisible-aligners') && (
-              <OrthodonticOptionsGallery />
-            )}
-            {s.slug === 'braces-orthodontics' && <OrthodonticCasesGallery />}
+            {s.slug === 'braces-orthodontics' && <OrthodonticOptionsGallery group="braces" />}
+            {s.slug === 'invisible-aligners' && <OrthodonticOptionsGallery group="aligners" />}
             {s.slug === 'crowns-bridges' && <ZirconiaCrownsGallery />}
             <div className="doctor-callout">
               {doctor && (

@@ -5,6 +5,9 @@ const copy = interfaceCopy.app_results_page;
 import { seo } from '@/lib/seo';
 import { assetPath } from '@/lib/paths';
 import { PageIntro, Breadcrumbs, CTA } from '@/components/ui';
+import { ExpandableImage } from '@/components/expandable-image';
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
 export const metadata = seo(
   'Clinical Case Gallery',
   'View consented clinical case photographs from META DENTAL in Panaiyur, including implant, cosmetic and aligner cases.',
@@ -30,25 +33,58 @@ export default function Page() {
                 <p className="result-category">{item.category}</p>
                 <h2>{item.title}</h2>
                 <p className="result-summary">{item.summary}</p>
-                <div className={`result-pair${item.images.length === 1 ? ' result-single' : ''}`}>
+                <div
+                  className={`result-pair${item.images.length === 1 ? ' result-single' : ''}${item.stageLabels ? ' result-composite' : ''}`}
+                >
                   {item.images.map((image) => (
                     <figure key={image.src}>
-                      <div>
-                        <Image
-                          src={image.src}
-                          alt={image.alt}
-                          fill
-                          sizes={item.images.length === 1 ? '(max-width: 700px) 90vw, 380px' : '(max-width: 700px) 44vw, 270px'}
-                          style={{ objectPosition: image.position ?? '50% 50%' }}
-                        />
-                      </div>
+                      {item.stageLabels ? (
+                        <div className="result-composite-media">
+                          <ExpandableImage
+                            className="result-composite-trigger"
+                            src={image.src}
+                            alt={image.alt}
+                            label={`${item.title} · ${item.stageLabels.join(' · ')}`}
+                            sizes="(max-width: 700px) 90vw, 380px"
+                            objectFit="contain"
+                          />
+                          <div className="result-stage-labels" aria-hidden="true">
+                            {item.stageLabels.map((stage, stageIndex) => (
+                              <span
+                                key={stage}
+                                style={{ top: `calc(${(stageIndex / item.stageLabels!.length) * 100}% + 12px)` }}
+                              >
+                                {stage}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        <div>
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            fill
+                            sizes={item.images.length === 1 ? '(max-width: 700px) 90vw, 380px' : '(max-width: 700px) 44vw, 270px'}
+                            style={{ objectPosition: image.position ?? '50% 50%' }}
+                          />
+                        </div>
+                      )}
                       <figcaption>{image.label}</figcaption>
                     </figure>
                   ))}
                 </div>
+                <Link className="button secondary result-treatment-link" href={item.treatmentHref}>
+                  View treatment details <ArrowUpRight size={17} aria-hidden="true" />
+                </Link>
                 <p>{item.note} Individual results vary.</p>
               </article>
             ))}
+          </div>
+          <div className="button-row results-all-treatments">
+            <Link className="button" href="/services/">
+              Explore all treatments <ArrowUpRight size={17} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

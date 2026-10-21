@@ -1,4 +1,5 @@
 import { assetPath } from '@/lib/paths';
+import { orthodonticCases } from '@/config/orthodontic-cases';
 
 export type ClinicalCase = {
   id: string;
@@ -6,6 +7,8 @@ export type ClinicalCase = {
   category: string;
   summary: string;
   note: string;
+  treatmentHref: string;
+  stageLabels?: readonly string[];
   images: Array<{
     label: string;
     src: string;
@@ -21,6 +24,7 @@ export const resultCases: ClinicalCase[] = [
     id: 'implant-placement-clinical-view',
     title: 'Dental implant placement',
     category: 'Implant dentistry',
+    treatmentHref: '/services/dental-implants/',
     summary:
       'An intraoral clinical view of an implant component positioned at a healed tooth-replacement site.',
     note: 'Clinical image supplied and approved for website use by META DENTAL.',
@@ -37,6 +41,7 @@ export const resultCases: ClinicalCase[] = [
     id: 'teeth-whitening',
     title: 'Teeth whitening',
     category: 'Cosmetic dentistry',
+    treatmentHref: '/services/teeth-whitening/',
     summary: 'A comparison supplied by the clinic to support a discussion about whitening care.',
     note: 'Images supplied by META DENTAL and previously published by the clinic.',
     images: [
@@ -48,6 +53,7 @@ export const resultCases: ClinicalCase[] = [
     id: 'smile-makeover',
     title: 'Smile makeover',
     category: 'Restorative cosmetic care',
+    treatmentHref: '/services/smile-designing/',
     summary: 'A clinic-supplied comparison showing one individual treatment journey.',
     note: 'Images supplied by META DENTAL and previously published by the clinic.',
     images: [
@@ -59,6 +65,7 @@ export const resultCases: ClinicalCase[] = [
     id: 'aligner-treatment',
     title: 'Aligner treatment',
     category: 'Orthodontics and aligners',
+    treatmentHref: '/services/invisible-aligners/',
     summary: 'A clinic-supplied comparison showing one individual aligner case.',
     note: 'Images supplied by META DENTAL and previously published by the clinic.',
     images: [
@@ -66,4 +73,20 @@ export const resultCases: ClinicalCase[] = [
       { label: 'After', src: assetPath('/images/results/aligners-after.png'), alt: 'Teeth after aligner treatment' },
     ],
   },
+  ...orthodonticCases.map((patientCase, index): ClinicalCase => ({
+    id: `orthodontic-${patientCase.id}`,
+    title: `Orthodontic case ${String(index + 1).padStart(2, '0')}`,
+    category: 'Orthodontics',
+    treatmentHref: '/services/braces-orthodontics/',
+    summary: 'An individual orthodontic case shown in intraoral clinical photographs.',
+    note: 'Treatment planning and outcomes are individual and should be discussed with an orthodontist.',
+    images: [
+      {
+        label: 'Clinical photographs',
+        src: patientCase.src,
+        alt: patientCase.alt,
+      },
+    ],
+    stageLabels: patientCase.stages,
+  })),
 ];

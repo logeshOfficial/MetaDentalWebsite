@@ -1,17 +1,23 @@
 import { orthodonticOptions } from '@/config/orthodontic-options';
 import { ExpandableImage } from '@/components/expandable-image';
 
-export function OrthodonticOptionsGallery() {
+export function OrthodonticOptionsGallery({ group }: { group: 'braces' | 'aligners' }) {
+  const options = orthodonticOptions.filter((option) => option.group === group);
+  const isAligners = group === 'aligners';
+
   return (
     <section className="orthodontic-options" aria-labelledby="orthodontic-options-heading">
       <p className="eyebrow">Orthodontic treatment options</p>
-      <h2 id="orthodontic-options-heading">Explore braces and clear aligners</h2>
+      <h2 id="orthodontic-options-heading">
+        {isAligners ? 'Explore Invisalign and clear aligners' : 'Explore fixed braces'}
+      </h2>
       <p className="orthodontic-options-intro">
-        Compare the appearance of the orthodontic systems available for discussion at META DENTAL.
+        Compare the {isAligners ? 'aligner' : 'braces'} options available for discussion at META
+        DENTAL.
         Your examination determines which option is appropriate for your teeth and bite.
       </p>
       <div className="orthodontic-options-grid">
-        {orthodonticOptions.map((option, index) => (
+        {options.map((option, index) => (
           <article className="orthodontic-option-card" key={option.id}>
             <div className={`orthodontic-option-media${option.images.length > 1 ? ' is-pair' : ''}`}>
               {option.images.map((image) => (
