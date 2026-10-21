@@ -58,6 +58,18 @@
           "order": 4
         },
         {
+          "id": "nobel-biocare-implant",
+          "type": "image",
+          "src": "/media/treatment-systems/nobel-biocare-implant.png",
+          "brand": "Nobel Biocare",
+          "title": "Nobel Biocare implant system",
+          "description": "An illustrated overview of Nobel Biocare implant and restorative components.",
+          "alt": "Nobel Biocare implant system with implant bodies and restorative components",
+          "featured": false,
+          "visible": true,
+          "order": 5
+        },
+        {
           "id": "implant-system-overview",
           "type": "image",
           "src": "/images/gallery/implant-systems.webp",
@@ -67,7 +79,7 @@
           "alt": "Overview of established dental implant systems and components",
           "featured": false,
           "visible": true,
-          "order": 5
+          "order": 6
         }
       ]
     }

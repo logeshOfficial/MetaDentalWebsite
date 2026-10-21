@@ -3,6 +3,7 @@ import { brand } from '@/config/brand';
 import { interfaceCopy } from '@/config/copy';
 const copy = interfaceCopy.app_reviews_page;
 import { site } from '@/lib/site';
+import { assetPath } from '@/lib/paths';
 import { seo } from '@/lib/seo';
 import { PageIntro, Breadcrumbs, CTA } from '@/components/ui';
 import { GoogleReviews } from '@/components/google-reviews';
@@ -36,6 +37,19 @@ export default function Page() {
           Auto-rotates every 5 seconds, pauses on hover/focus. */}
       <section className="section" id="reviews">
         <div className="container">
+          <figure className="review-smiles-banner">
+            <Image
+              src={assetPath('/images/reviews/happy-smiles-collage.webp')}
+              alt="Collage of smiling adults representing a range of patient experiences"
+              width={1600}
+              height={600}
+              sizes="(max-width: 700px) 100vw, 1240px"
+            />
+            <figcaption>
+              <span>Every smile is different.</span>
+              Every experience matters.
+            </figcaption>
+          </figure>
           <GoogleReviews />
         </div>
       </section>

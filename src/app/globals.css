@@ -6,6 +6,41 @@
 }
 
 /* Reviews: turn the feedback prompt into a useful patient action panel. */
+.review-smiles-banner {
+  position: relative;
+  margin: 0 0 clamp(52px, 7vw, 84px);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--border);
+}
+.review-smiles-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.review-smiles-banner::after {
+  content: '';
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(180deg, transparent, rgba(7, 45, 41, 0.82));
+}
+.review-smiles-banner figcaption {
+  position: absolute;
+  z-index: 1;
+  right: clamp(20px, 4vw, 42px);
+  bottom: clamp(18px, 3vw, 32px);
+  left: clamp(20px, 4vw, 42px);
+  color: #fff;
+  font-size: clamp(0.78rem, 1.4vw, 0.96rem);
+}
+.review-smiles-banner figcaption span {
+  display: block;
+  margin-bottom: 3px;
+  font-size: clamp(1.15rem, 2.2vw, 1.65rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
 .review-feedback-section { padding-block: 64px; }
 .review-feedback-grid {
   display: grid;
@@ -79,6 +114,14 @@
   .review-feedback-media { min-height: 380px; }
 }
 @media (max-width: 600px) {
+  .review-smiles-banner {
+    aspect-ratio: 4 / 3;
+  }
+  .review-smiles-banner img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
   .review-feedback-section { padding-block: 48px; }
   .review-feedback-media { min-height: 310px; }
   .review-feedback-actions .button { width: 100%; }
