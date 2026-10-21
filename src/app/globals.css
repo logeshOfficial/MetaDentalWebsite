@@ -1363,6 +1363,85 @@ footer {
   padding-top: 38px;
   border-top: 1px solid var(--border);
 }
+.orthodontic-cases {
+  margin-top: 54px;
+  padding-top: 42px;
+  border-top: 1px solid var(--border);
+}
+.orthodontic-cases > .eyebrow {
+  margin-bottom: 10px;
+}
+.orthodontic-cases > h2 {
+  max-width: 780px;
+  margin-top: 0;
+}
+.orthodontic-cases-intro {
+  max-width: 740px;
+  color: var(--muted);
+}
+.orthodontic-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 30px;
+}
+.orthodontic-case-card {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--background);
+}
+.orthodontic-case-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  background: #f4f1ed;
+  cursor: zoom-in;
+}
+.orthodontic-case-image img {
+  object-fit: contain;
+  transition: transform 260ms ease;
+}
+.orthodontic-case-image:hover img {
+  transform: scale(1.015);
+}
+.orthodontic-case-caption {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  column-gap: 12px;
+  padding: 16px 20px 18px;
+}
+.orthodontic-case-caption > span {
+  grid-row: span 2;
+  color: var(--primary);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+}
+.orthodontic-case-caption p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+.orthodontic-case-caption small {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+.orthodontic-cases-note {
+  max-width: 850px;
+  margin: 24px 0 0;
+  padding: 15px 18px;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.78rem;
+}
 .zirconia-gallery {
   margin-top: 48px;
   padding-top: 38px;
@@ -1525,6 +1604,14 @@ footer {
   }
   .orthodontic-options-grid {
     grid-template-columns: 1fr;
+  }
+  .orthodontic-cases-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .orthodontic-cases {
+    margin-top: 44px;
+    padding-top: 34px;
   }
   .zirconia-gallery-grid {
     grid-template-columns: 1fr;
