@@ -12,7 +12,6 @@ export const metadata = seo(
   'Clinical Case Gallery',
   'View consented clinical case photographs from META DENTAL in Panaiyur, including implant, cosmetic and aligner cases.',
   '/results/',
-  false,
 );
 export default function Page() {
   return (
